@@ -37,12 +37,12 @@
 <div id="menu-outer">
   <div id="menu-inner">
       <ul id="slide-out" class="side-nav" >
-    <div class="nav-header"  style="background-image: url(/images/header-bg.png);background-color:#26A69A">
-    <div class="header-box"><img src="/images/header.png" ondragstart="return false;"></div>
+    <div class="nav-header"  style="background-image: url(/images/side-header-bg.jpg);background-color:#26A69A">
+    <div class="header-box"><img src="/images/header.jpg" ondragstart="return false;"></div>
     <p>李华炎</p>
     <div class="nav-link">
         
-        <a href="http://example.com" target="_blank"> <div class="link-box twitter"></div></a>
+        <a href="https://github.com/enter1024" target="_blank"> <div class="link-box twitter"></div></a>
         
         
         <a  href="https://github.com/enter1024" target="_blank"><div class="link-box github"></div></a>
@@ -89,6 +89,12 @@
 </ul>
 <!--categories-->
 
+<li class="nav-list dropdown-btn">
+    <a   class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
         <a class="category-link" href="/categories/javascript/">javascript<span class="category-count">1</span></a>
@@ -104,9 +110,27 @@
 
 <!--photo-->
 
+<li class="nav-list">
+    <a href="/photo" class="nopjax" target="_self">
+        <div class="nav-ico"><i class="material-icons">insert_photo</i> </div><p>影集</p>
+    </a>
+</li>
+
 <!--friends-->
 
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
 <!--about-->
+
+<li class="nav-list">
+    <a href="/about" target="_self">
+        <div class="nav-ico"><i class="material-icons">copyright</i> </div><p>关于</p>
+    </a>
+</li>
 
 
 </ul>
@@ -125,7 +149,7 @@
 
 <div id="recent-posts">
   
-      <div class="recent-post-item lazy" style="background-color:#26A69A"  data-original="/images/random/vateral-18.png"  >
+      <div class="recent-post-item lazy" style="background-color:#26A69A"  data-original="/images/random/vateral-17.png"  >
         <a class="recent-post-link" href="/2017/08/01/js-feature/">
         <div class="post-hover">
           <!--title-->
@@ -143,7 +167,7 @@
 
           标签:
             
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog-Javascript/">blog Javascript</a></li></ul>
             
           <!--分类-->
 
@@ -167,7 +191,7 @@ JavaScript是一种基于对象和事件驱动的客户端脚本语言，并具�
         </a>
       </div>
   
-      <div class="recent-post-item lazy" style="background-color:#26A69A"  data-original="/images/random/vateral-1.png"  >
+      <div class="recent-post-item lazy" style="background-color:#26A69A"  data-original="/images/random/vateral-5.png"  >
         <a class="recent-post-link" href="/2017/07/31/hello-world/">
         <div class="post-hover">
           <!--title-->
@@ -226,7 +250,7 @@ JavaScript是一种基于对象和事件驱动的客户端脚本语言，并具�
 
 <p >Copyright ©  2017  李华炎-Blog</p>
 <p >Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> & Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
-<p style="font-size: 10px" id="footer-times" data-time="1/1/2017 00:00:00"></p>
+<p style="font-size: 10px" id="footer-times" data-time="1/1/2016 00:00:00"></p>
 <script>
     var beginTime=document.getElementById("footer-times").dataset.time
     function show_date_time(){
@@ -283,8 +307,6 @@ JavaScript是一种基于对象和事件驱动的客户端脚本语言，并具�
             menu();
         });
 </script>
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </body>
 </html>
