@@ -31,7 +31,8 @@
           url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
       }
   </style>
-</head>
+<link rel="stylesheet" href="/css/prism-solarizedlight.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 <body>
 <div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
 <div id="menu-outer">
@@ -142,7 +143,7 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title"  style="background-color:#26A69A;background-image:url(/images/random/vateral-3.png)" >
+  <div class="post-page-title"  style="background-color:#26A69A;background-image:url(/images/random/vateral-13.png)" >
   <h2>java object</h2>
     
   <p>作者:李华炎 &nbsp&nbsp 发布于:<time datetime="2016-08-02T12:58:27.000Z">
@@ -152,42 +153,53 @@
     
   </div>
   <div class="post-page-content">
-  <h3 id="Java中的面向对象概述"><a href="#Java中的面向对象概述" class="headerlink" title="Java中的面向对象概述"></a>Java中的面向对象概述</h3><blockquote>
-<ul>
-<li>面向对象是相对于面向过程而言的</li>
-<li>面向对象和面向过程都是一种思想，不是编程语言</li>
-<li>面向过程强调的是功能的行为</li>
-<li>面向对象是将功能封装进对象，强调的是具备了功能的对象</li>
-<li>面向对象是居于面向过程的</li>
-</ul>
+  <h5 id="Java中的面向对象概述"><a href="#Java中的面向对象概述" class="headerlink" title="Java中的面向对象概述"></a>Java中的面向对象概述</h5><blockquote>
+<p>1.面向对象是相对于面向过程而言的;<br>2.面向对象和面向过程都是一种思想，不是编程语言;<br>3.面向过程强调的是功能的行为;<br>4.面向对象是将功能封装进对象，强调的是具备了功能的对象;<br>5.面向对象是居于面向过程的;</p>
 </blockquote>
-<h3 id="对象中的成员分类"><a href="#对象中的成员分类" class="headerlink" title="对象中的成员分类"></a>对象中的成员分类</h3><blockquote>
+<h5 id="对象中的成员分类"><a href="#对象中的成员分类" class="headerlink" title="对象中的成员分类"></a>对象中的成员分类</h5><blockquote>
 <p>成员包含属性和行为<br>1.静态部分： 属性 —&gt; 成员变量<br>2.动态部分： 行为 —&gt; 成员方法</p>
 </blockquote>
-<h3 id="面向对象的特征-重点"><a href="#面向对象的特征-重点" class="headerlink" title="面向对象的特征(重点)"></a>面向对象的特征(重点)</h3><ol>
-<li>封装： 封装是将对象的属性和行为封装起来，对外隐藏实现细节，其载体就是类；<blockquote>
-<p>   封装的优点</p>
-<pre><code>1.  将变化隔离
-2.  便于使用
-3.  提高重用性
-4.  提高安全性
-</code></pre></blockquote>
+<h5 id="面向对象的特征-重点"><a href="#面向对象的特征-重点" class="headerlink" title="面向对象的特征(重点)"></a>面向对象的特征(重点)</h5><ol>
+<li><b>封装：</b> 封装是将对象的属性和行为封装起来，对外隐藏实现细节，其载体就是类；<blockquote>
+<p>封装的优点<br>1.将变化隔离<br>2.便于使用<br>3.提高重用性<br>4.提高安全性</p>
+</blockquote>
 </li>
-<li>继承： 继承是指一个对象从另一个对象中获取属性和方法的过程<blockquote>
-<p>   继承的优点</p>
-<pre><code>1.  不需要写重复的代码，新的实现可以通过继承而来
-2.  在原有的实现中扩展自己
-</code></pre><p>   继承的缺点</p>
-<pre><code>1.  打破了封装，因为基类向子类暴露了实现细节
-</code></pre></blockquote>
+<li><b>继承：</b> 继承是指一个对象从另一个对象中获取属性和方法的过程<blockquote>
+<p>继承的优点<br>1.不需要写重复的代码，新的实现可以通过继承而来<br>2.在原有的实现中扩展自己</p>
+<p>继承的缺点<br>1.打破了封装，因为基类向子类暴露了实现细节</p>
+</blockquote>
 </li>
-<li>多态：父类对象应用于子类对象的特征就叫多态（即子类对象的指针指向父类对象，执行时执行子类对象的行为）<blockquote>
-<p>   多态的优点：</p>
-<pre><code>1.同一操作作用于不同的对象，可以有不同的执行结果。在运行时，可以通过指向基类的指针，来调用实现派生类中的方法。
-</code></pre></blockquote>
+<li><b>多态：</b> 父类对象应用于子类对象的特征就叫多态（即子类对象的指针指向父类对象，执行时执行子类对象的行为）<blockquote>
+<p>多态的优点：<br>1.同一操作作用于不同的对象，可以有不同的执行结果。在运行时，可以通过指向基类的指针，来调用实现派生类中的方法。</p>
+</blockquote>
 </li>
 </ol>
-<h3 id="从面向过程到面向对象的迭代"><a href="#从面向过程到面向对象的迭代" class="headerlink" title="从面向过程到面向对象的迭代"></a>从面向过程到面向对象的迭代</h3>
+<h5 id="java中的类"><a href="#java中的类" class="headerlink" title="java中的类"></a>java中的类</h5><blockquote>
+<p>文件名和类名要一致<br>需要有构造函数，用于创建对象（方法可重载）</p>
+</blockquote>
+<pre class="line-numbers language-bash"><code class="language-bash">
+    // 文件名 Person.java
+    class Person <span class="token punctuation">{</span>
+        public Person <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token punctuation">}</span>
+
+        public Person <span class="token punctuation">(</span>string name, int age, string gender<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+             this.name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+             this.age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+             this.gender <span class="token operator">=</span> gender<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        void sayHello <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System.out.println<span class="token punctuation">(</span>this.name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> 
+
+
+
+    var a <span class="token operator">=</span> 10<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
   </div>
   <!--评论块-->
     
@@ -208,7 +220,7 @@
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Java中的面向对象概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java中的面向对象概述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对象中的成员分类"><span class="post-toc-number">2.</span> <span class="post-toc-text">对象中的成员分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#面向对象的特征-重点"><span class="post-toc-number">3.</span> <span class="post-toc-text">面向对象的特征(重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从面向过程到面向对象的迭代"><span class="post-toc-number">4.</span> <span class="post-toc-text">从面向过程到面向对象的迭代</span></a></li></ol>
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Java中的面向对象概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java中的面向对象概述</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对象中的成员分类"><span class="post-toc-number">2.</span> <span class="post-toc-text">对象中的成员分类</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#面向对象的特征-重点"><span class="post-toc-number">3.</span> <span class="post-toc-text">面向对象的特征(重点)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#java中的类"><span class="post-toc-number">4.</span> <span class="post-toc-text">java中的类</span></a></li></ol>
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">
