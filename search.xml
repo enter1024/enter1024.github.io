@@ -77,6 +77,8 @@
             
             <tag> js </tag>
             
+            <tag> js特征 </tag>
+            
         </tags>
         
     </entry>
@@ -308,6 +310,12 @@ document<span class="token punctuation">.</span><span class="token function">que
             
             <tag> js </tag>
             
+            <tag> this </tag>
+            
+            <tag> call </tag>
+            
+            <tag> apply </tag>
+            
         </tags>
         
     </entry>
@@ -454,6 +462,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
         
         <tags>
             
+            <tag> 对象 </tag>
+            
             <tag> js </tag>
             
         </tags>
@@ -532,6 +542,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <tags>
             
             <tag> java </tag>
+            
+            <tag> 对象 </tag>
             
         </tags>
         
