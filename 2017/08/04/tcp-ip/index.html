@@ -141,25 +141,85 @@
 
 <div id="content-outer">
   <div id="content-inner">
-    <div class="friends">
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-7.png)" >
+  <h2>链接世界的桥梁TCP/IP</h2>
+    
+  <p>作者:李华炎 &nbsp&nbsp 发布于:<time datetime="2017-08-04T06:54:22.000Z">
+          2017-08-04
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <blockquote>
+<p>TCP/IP是一种网络传输协议的总称，可以分为4层<br>1.应用层（Telnet、FTP和Email等）FTP、Telnet、SMTP、HTTP、RIP、NFS、DNS<br>2.运输层（TCP协议、UDP协议）<br>3.网络层（IP、ICMP、IGMP等）IP协议、ICMP协议、ARP协议、RARP协议<br>4.链路层（设备驱动程序）</p>
+</blockquote>
+<p><br></p>
+<blockquote>
+<p>TCP/IP通常指的是TCP/IP协议簇，是一组不同的协议组合在一起勾成的协议簇，上文中列举了四种不同层次的协议。<br>1.FTP、HTTP是一种应用层协议<br>2.TCP是一种运输层协议<br>3.IP是一种网络层协议<br>4.以太网协议则应用于链路层上</p>
+</blockquote>
+<p><br></p>
+<blockquote>
+<p>在TCP/I P协议族中，网络层IP提供的是一种不可靠的服务。也就是说，它只是尽可能快地把分组从源结点送到目的结点，但是并不提供任何可靠性保证。而另一方面， TCP在不可靠的IP层上提供了一个可靠的运输层。为了提供这种可靠的服务，TCP采用了超时重传、发送和接收端到端的确认分组等机制。 </p>
+</blockquote>
+<p><br></p>
+<blockquote>
+<p>域名系统<br>在TCP/IP领域中，域名系统（DNS）是一个分布的数据库，由它来提供IP地址和主机名之间的映射信息.</p>
+</blockquote>
+
+  </div>
+  <!--评论块-->
+    
+  <div id="disqus_thread" style="padding:30px;text-align: center;border-top:1px solid silver " data-diaque="enterlhy-disqus-com.disqus.com"><button style="margin: 0 auto;background-color:#26A69A " class="btn" onclick="disqus()">加载评论(被墙则无法加载)</button></div>
+
+  <script>
+
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */
+      function disqus() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script'),v = d.createElement('script'),disquUrl=document.getElementById("disqus_thread").dataset.diaque;
+          v.id = 'dsq-count-scr'
+          v.src= '//'+disquUrl+'/count.js';
+          s.src = 'https://'+disquUrl+'/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(v);
+          (d.head || d.body).appendChild(s);
+      }
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
 
 
-    <a href="http://www.jianshu.com/u/10ae59f49b13" target="_blank">
-        <div class="friends-link">
-            <span class="friends-links-title">波波是简书上的签约作者哦！是不是很牛X</span><br/>
-            <span>波同学的前端经验分享</span>
-        </div>
-    </a>
-
-    <a href="http://www.yuelizhang.bid" target="_blank">
-        <div class="friends-link">
-            <span class="friends-links-title">天道酬勤</span><br/>
-            <span>张立月同学的笔记汇总</span>
-        </div>
-    </a>
-
-
+  <!-- Next Nav -->
+    
+  <a href="/2017/08/01/js-feature/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    
 </div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
   </div>
 </div>
 <div id="bottom-outer">
