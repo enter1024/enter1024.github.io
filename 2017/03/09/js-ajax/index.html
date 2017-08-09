@@ -141,25 +141,113 @@
 
 <div id="content-outer">
   <div id="content-inner">
-    <div class="friends">
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-13.png)" >
+  <h2>Ajax异步请求(http请求)</h2>
+    
+  <p>作者:李华炎 &nbsp&nbsp 发布于:<time datetime="2017-03-09T01:23:15.000Z">
+          2017-03-09
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <h5 id="一次完整的http请求"><a href="#一次完整的http请求" class="headerlink" title="一次完整的http请求"></a>一次完整的http请求</h5><p>当我们在浏览器的地址栏中输入一个url地址时（如：www.baidu.com）都经历了那些步骤？</p>
+<blockquote>
+<p>1.域名解析（DNS）<br>2.发起TCP的3次握手，建立TCP链接<br>3.浏览器向服务器发送http请求<br>4.服务器接收到http请求后处理请求并返回指定格式的文件<br>5.浏览器接收到服务器返回的数据后进行数据解析成html文件<br>6.浏览器解析并访问页面中引用的外部文件<br>7.浏览器将解析后的页面展示在用户面前</p>
+</blockquote>
+<p><br></p>
+<h5 id="一个请求的组成部分（浏览器端）"><a href="#一个请求的组成部分（浏览器端）" class="headerlink" title="一个请求的组成部分（浏览器端）"></a>一个请求的组成部分（浏览器端）</h5><blockquote>
+<p>1.请求行(请求所使用的方法、url、协议等)<br>2.请求头(包含客服端环境信息和身份验证信息等)<br>3.空行<br>4.请求体(要提交的查询字符串信息或表单信息等，请求数据不是必须的)</p>
+</blockquote>
+<p><br></p>
+<h5 id="一个响应的组成部分-服务器端"><a href="#一个响应的组成部分-服务器端" class="headerlink" title="一个响应的组成部分(服务器端)"></a>一个响应的组成部分(服务器端)</h5><blockquote>
+<p>1.响应行(响应内容的状态码)<br>2.响应头(包含服务器的信息，如：服务器类型、日期时间、内容类型和长度等)<br>3.空行<br>4.响应体(即响应正文，该内容是我们需要处理的主体)</p>
+</blockquote>
+<p><br></p>
+<h5 id="状态码的类型"><a href="#状态码的类型" class="headerlink" title="状态码的类型"></a>状态码的类型</h5><p>http状态码由三位数字组成，首位数字定义状态码的类型</p>
+<blockquote>
+<p>1xx: 信息性状态码  </p>
+<blockquote>
+<p>100, 101  </p>
+</blockquote>
+<p>2xx: 成功状态码</p>
+<blockquote>
+<p>200：OK</p>
+</blockquote>
+<p>3xx: 重定向状态码</p>
+<blockquote>
+<p>301: 永久重定向, Location响应首部的值仍为当前URL，因此为隐藏重定向;<br>302: 临时重定向，显式重定向, Location响应首部的值为新的URL<br>304：Not Modified  未修改，比如本地缓存的资源文件和服务器上比较时，发现并没有修改，服务器返回一个304状态码，告诉浏览器，你不用请求该资源，直接使用本地的资源即可。</p>
+</blockquote>
+<p>4xx: 客户端错误状态码</p>
+<blockquote>
+<p>404: Not Found  请求的URL资源并不存在</p>
+</blockquote>
+<p>5xx: 服务器端错误状态码</p>
+<blockquote>
+<p>500: Internal Server Error  服务器内部错误<br>502: Bad Gateway  前面代理服务器联系不到后端的服务器时出现<br>504：Gateway Timeout  这个是代理能联系到后端的服务器，但是后端的服务器在规定的时间内没有给代理服务器响应</p>
+</blockquote>
+</blockquote>
+<p><br></p>
+<h5 id="HTTP是一种无状态的协议"><a href="#HTTP是一种无状态的协议" class="headerlink" title="HTTP是一种无状态的协议"></a>HTTP是一种无状态的协议</h5><p>HTTP协议是无状态的(即不建立持久的链接)<br>当浏览器向服务器发送一个http请求后，服务器对请求做出响应后就会断开链接，整个过程服务器不会保存任何的状态</p>
+<p><br></p>
+
+  </div>
+  <!--评论块-->
+    
+  <div id="disqus_thread" style="padding:30px;text-align: center;border-top:1px solid silver " data-diaque="enterlhy-disqus-com.disqus.com"><button style="margin: 0 auto;background-color:#26A69A " class="btn" onclick="disqus()">加载评论(被墙则无法加载)</button></div>
+
+  <script>
+
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */
+      function disqus() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script'),v = d.createElement('script'),disquUrl=document.getElementById("disqus_thread").dataset.diaque;
+          v.id = 'dsq-count-scr'
+          v.src= '//'+disquUrl+'/count.js';
+          s.src = 'https://'+disquUrl+'/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(v);
+          (d.head || d.body).appendChild(s);
+      }
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+  <a href="/2017/03/19/js-async/" id="post_nav-newer" class="post-nav-content prev-content">
+      新篇
+  </a>
+    
 
 
-    <a href="http://www.jianshu.com/u/10ae59f49b13" target="_blank">
-        <div class="friends-link">
-            <span class="friends-links-title">波波是简书上的签约作者哦！是不是很牛X</span><br/>
-            <span>波同学的前端经验分享</span>
-        </div>
-    </a>
-
-    <a href="http://www.yuelizhang.bid" target="_blank">
-        <div class="friends-link">
-            <span class="friends-links-title">天道酬勤</span><br/>
-            <span>张立月同学的笔记汇总</span>
-        </div>
-    </a>
-
-
+  <!-- Next Nav -->
+    
+  <a href="/2017/02/04/js-call-apply/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一次完整的http请求"><span class="post-toc-number">1.</span> <span class="post-toc-text">一次完整的http请求</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一个请求的组成部分（浏览器端）"><span class="post-toc-number">2.</span> <span class="post-toc-text">一个请求的组成部分（浏览器端）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一个响应的组成部分-服务器端"><span class="post-toc-number">3.</span> <span class="post-toc-text">一个响应的组成部分(服务器端)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#状态码的类型"><span class="post-toc-number">4.</span> <span class="post-toc-text">状态码的类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#HTTP是一种无状态的协议"><span class="post-toc-number">5.</span> <span class="post-toc-text">HTTP是一种无状态的协议</span></a></li></ol>
 </div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
   </div>
 </div>
 <div id="bottom-outer">
