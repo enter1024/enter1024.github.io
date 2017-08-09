@@ -779,7 +779,7 @@ obj <span class="token operator">=</span> <span class="token punctuation">{</spa
 <h5 id="XMLHttpRequest获取响应数据的属性或方法"><a href="#XMLHttpRequest获取响应数据的属性或方法" class="headerlink" title="XMLHttpRequest获取响应数据的属性或方法"></a>XMLHttpRequest获取响应数据的属性或方法</h5><pre><code>responseText 获得字符串形式的响应数据
 responseXML 获得xml形式的响应数据
 status与statusText 以数字形式或文本形式返回http的状态码
-getAllResponseHeader() 获取所有的响应报头
+getAllResponseHeaders() 获取所有的响应报头
 getResponseHeader()    查询响应中的某个字段的值
 </code></pre><p><br></p>
 <h5 id="JSON中可以使用如下数据类型作为键的值"><a href="#JSON中可以使用如下数据类型作为键的值" class="headerlink" title="JSON中可以使用如下数据类型作为键的值"></a>JSON中可以使用如下数据类型作为键的值</h5><blockquote>
