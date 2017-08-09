@@ -192,6 +192,129 @@
 <p><br></p>
 <h5 id="HTTP是一种无状态的协议"><a href="#HTTP是一种无状态的协议" class="headerlink" title="HTTP是一种无状态的协议"></a>HTTP是一种无状态的协议</h5><p>HTTP协议是无状态的(即不建立持久的链接)<br>当浏览器向服务器发送一个http请求后，服务器对请求做出响应后就会断开链接，整个过程服务器不会保存任何的状态</p>
 <p><br></p>
+<h5 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h5><blockquote>
+<p>1.Ajax全称：Asynchronous Javascript and XML(异步的javascript和xml)</p>
+<p>2.Ajax不是某种编程语言，而是一种无须重新加载整个页面的情况下更新某一部分数据的技术</p>
+<p>3.浏览器可以通过XMLHttpRequest对象和服务器进行数据交互，并且不会刷新整个页面</p>
+<p>4.XMLHttpRequest不支持IE5、IE6，如果需要支持IE5、IE6就需要通过</p>
+<p><code>new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;)</code> 创建对象发送异步请求</p>
+</blockquote>
+<p><br></p>
+<h5 id="原生ajax写法"><a href="#原生ajax写法" class="headerlink" title="原生ajax写法"></a>原生ajax写法</h5><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">/**
+ * @param url 请求的url地址
+ */</span>
+<span class="token keyword">function</span> <span class="token function">ajaxGET</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 1.创建XMLHttpRequest对象</span>
+    <span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>XMLHttpRequest<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+        xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">"Microsoft.XMLHTTP"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 2.初始化请求</span>
+    xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 3.发送请求</span>
+    xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 4.获取响应数据</span>
+    xhr<span class="token punctuation">.</span>onreadystatechange <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>readyState <span class="token operator">==</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> xhr<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 5.处理响应数据</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">/**
+ * @param url
+ * @param stringData 字符串类型的数据
+ */</span>
+<span class="token keyword">function</span> <span class="token function">ajaxPost</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span>stringData<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 1.创建XMLHttpRequest对象</span>
+    <span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>XMLHttpRequest<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+        xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">"Microsoft.XMLHTTP"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 2.初始化请求</span>
+    xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"POST"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 3.发送请求</span>
+    xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span><span class="token string">"application/x-www-form-urlencoded"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>stringData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 4.获取响应数据</span>
+    xhr<span class="token punctuation">.</span>onreadystatechange <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>readyState <span class="token operator">==</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> xhr<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 5.处理响应数据</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><br></p>
+<h5 id="XMLHttpRequest的生命周期"><a href="#XMLHttpRequest的生命周期" class="headerlink" title="XMLHttpRequest的生命周期"></a>XMLHttpRequest的生命周期</h5><blockquote>
+<p>创建</p>
+<p>初始化请求</p>
+<p>发送请求</p>
+<p>接收数据</p>
+<p>解析数据</p>
+<p>完成(数据就绪并可使用)</p>
+</blockquote>
+<p><br></p>
+<h5 id="监听readystate状态的变化"><a href="#监听readystate状态的变化" class="headerlink" title="监听readystate状态的变化"></a>监听readystate状态的变化</h5><blockquote>
+<p>0 : 请求未初始化，open()还没有调用</p>
+<p>1 : 服务连接已建立，send()已经调用了</p>
+<p>2 : 接收数据完成(即服务器端响应的原始数据已接收完成，但浏览器不识别)</p>
+<p>3 : 响应数据解析中(此时浏览器已经拿到响应体了，正在解析为浏览器支持的格式)</p>
+<p>4 : 请求已完成(数据已就绪，即响应数据已解析为浏览器支持的格式)</p>
+</blockquote>
+<p><br></p>
+<h5 id="XMLHttpRequest获取响应数据的属性或方法"><a href="#XMLHttpRequest获取响应数据的属性或方法" class="headerlink" title="XMLHttpRequest获取响应数据的属性或方法"></a>XMLHttpRequest获取响应数据的属性或方法</h5><pre><code>responseText 获得字符串形式的响应数据
+responseXML 获得xml形式的响应数据
+status与statusText 以数字形式或文本形式返回http的状态码
+getAllResponseHeader() 获取所有的响应报头
+getResponseHeader()    查询响应中的某个字段的值
+</code></pre><p><br></p>
+<h5 id="JSON中可以使用如下数据类型作为键的值"><a href="#JSON中可以使用如下数据类型作为键的值" class="headerlink" title="JSON中可以使用如下数据类型作为键的值"></a>JSON中可以使用如下数据类型作为键的值</h5><blockquote>
+<p>1.数字</p>
+<p>2.字符串</p>
+<p>3.boolean</p>
+<p>4.数组</p>
+<p>5.对象</p>
+<p>6.null</p>
+</blockquote>
+<p><br></p>
+<h5 id="JSON的解析方法"><a href="#JSON的解析方法" class="headerlink" title="JSON的解析方法"></a>JSON的解析方法</h5><blockquote>
+<p>序列化与反序列化</p>
+<p>1.JSON.parse(data);        // </p>
+<p>2.JSON.stringify(data);        // 序列化为json字符串</p>
+</blockquote>
+<p><br></p>
+<h5 id="jQuery实现Ajax"><a href="#jQuery实现Ajax" class="headerlink" title="jQuery实现Ajax"></a>jQuery实现Ajax</h5><blockquote>
+<p>jQuery.ajax([settings]);</p>
+<p>1.type : 方法的类型，GET/POST，默认GET</p>
+<p>2.url : 发送请求的地址</p>
+<p>3.data : 对象，连同请求一同发送到服务器端的数据</p>
+<p>4.dataType : 预期服务器返回的数据类型</p>
+<p>5.success : 成功后的回调函数，参数是请求成功后返回的数据</p>
+<p>6.error : 失败时的回调，参数是XMLHttpRequest对象</p>
+</blockquote>
+<p><br></p>
+<h5 id="百度静态资源库中的jQuery文件"><a href="#百度静态资源库中的jQuery文件" class="headerlink" title="百度静态资源库中的jQuery文件"></a>百度静态资源库中的jQuery文件</h5><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://apps.bding.com/libs/jquery/1.11.1/jquery.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><br></p>
+<h5 id="服务器端常用的脚本语言及数据库"><a href="#服务器端常用的脚本语言及数据库" class="headerlink" title="服务器端常用的脚本语言及数据库"></a>服务器端常用的脚本语言及数据库</h5><blockquote>
+<p>语言</p>
+<p>1.PHP</p>
+<p>2.Java</p>
+<p>3.NET</p>
+<p>数据库</p>
+<p>1.MySQL</p>
+<p>2.Oracle</p>
+<p>3.SQL Server</p>
+</blockquote>
+<p><br></p>
 
   </div>
   <!--评论块-->
@@ -242,7 +365,7 @@
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一次完整的http请求"><span class="post-toc-number">1.</span> <span class="post-toc-text">一次完整的http请求</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一个请求的组成部分（浏览器端）"><span class="post-toc-number">2.</span> <span class="post-toc-text">一个请求的组成部分（浏览器端）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一个响应的组成部分-服务器端"><span class="post-toc-number">3.</span> <span class="post-toc-text">一个响应的组成部分(服务器端)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#状态码的类型"><span class="post-toc-number">4.</span> <span class="post-toc-text">状态码的类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#HTTP是一种无状态的协议"><span class="post-toc-number">5.</span> <span class="post-toc-text">HTTP是一种无状态的协议</span></a></li></ol>
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一次完整的http请求"><span class="post-toc-number">1.</span> <span class="post-toc-text">一次完整的http请求</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一个请求的组成部分（浏览器端）"><span class="post-toc-number">2.</span> <span class="post-toc-text">一个请求的组成部分（浏览器端）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一个响应的组成部分-服务器端"><span class="post-toc-number">3.</span> <span class="post-toc-text">一个响应的组成部分(服务器端)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#状态码的类型"><span class="post-toc-number">4.</span> <span class="post-toc-text">状态码的类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#HTTP是一种无状态的协议"><span class="post-toc-number">5.</span> <span class="post-toc-text">HTTP是一种无状态的协议</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ajax"><span class="post-toc-number">6.</span> <span class="post-toc-text">ajax</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#原生ajax写法"><span class="post-toc-number">7.</span> <span class="post-toc-text">原生ajax写法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#XMLHttpRequest的生命周期"><span class="post-toc-number">8.</span> <span class="post-toc-text">XMLHttpRequest的生命周期</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#监听readystate状态的变化"><span class="post-toc-number">9.</span> <span class="post-toc-text">监听readystate状态的变化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#XMLHttpRequest获取响应数据的属性或方法"><span class="post-toc-number">10.</span> <span class="post-toc-text">XMLHttpRequest获取响应数据的属性或方法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#JSON中可以使用如下数据类型作为键的值"><span class="post-toc-number">11.</span> <span class="post-toc-text">JSON中可以使用如下数据类型作为键的值</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#JSON的解析方法"><span class="post-toc-number">12.</span> <span class="post-toc-text">JSON的解析方法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#jQuery实现Ajax"><span class="post-toc-number">13.</span> <span class="post-toc-text">jQuery实现Ajax</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#百度静态资源库中的jQuery文件"><span class="post-toc-number">14.</span> <span class="post-toc-text">百度静态资源库中的jQuery文件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#服务器端常用的脚本语言及数据库"><span class="post-toc-number">15.</span> <span class="post-toc-text">服务器端常用的脚本语言及数据库</span></a></li></ol>
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">
