@@ -1215,6 +1215,272 @@ console<span class="token punctuation">.</span><span class="token function">log<
     </entry>
     
     <entry>
+      <title><![CDATA[内置对象String]]></title>
+      <url>/2016/10/11/js-string/</url>
+      <content type="html"><![CDATA[<h4 id="String-对象属性"><a href="#String-对象属性" class="headerlink" title="String 对象属性"></a>String 对象属性</h4><blockquote>
+<p>1.prototype : 允许向对象添加属性和方法</p>
+<p>2.length : 字符串的长度，从1开始</p>
+<p>3.constructor: 返回创建String实例属性的构造函数</p>
+</blockquote>
+<p><br></p>
+<h4 id="String-对象方法"><a href="#String-对象方法" class="headerlink" title="String 对象方法"></a>String 对象方法</h4><h5 id="1-string-charAt-index"><a href="#1-string-charAt-index" class="headerlink" title="1.string.charAt(index);"></a>1.string.charAt(index);</h5><blockquote>
+<p><strong>返回值：</strong> 角标对应的字符(不改变原字符串)</p>
+<p><strong>提示：</strong> index必须的</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 案例1：获取最后一个字符</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"HELLO WORLD"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span>length<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// D</span>
+
+<span class="token comment" spellcheck="true">// 案例2：获取第一个字符</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"HELLO WORLD"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// H</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-string-charCodeAt-index"><a href="#2-string-charCodeAt-index" class="headerlink" title="2.string.charCodeAt(index);"></a>2.string.charCodeAt(index);</h5><blockquote>
+<p><strong>返回值：</strong> 角标对应的字符在Unicode 编码表上的位置(不改变原字符串)</p>
+<p><strong>提示：</strong> index必须的</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//  案例1：A-Z的unicode编码    [65, 90]</span>
+<span class="token comment" spellcheck="true">//    a-z[97-122]</span>
+<span class="token comment" spellcheck="true">//    0-9[48-57]</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"A-Z"</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">// 65</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span>length<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 90</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="3-String-fromCharCode-n1-n2-…-nX"><a href="#3-String-fromCharCode-n1-n2-…-nX" class="headerlink" title="3.String.fromCharCode(n1, n2, …, nX);"></a>3.String.fromCharCode(<em>n1</em>, <em>n2</em>, …, <em>nX</em>);</h5><blockquote>
+<p><strong>返回值：</strong> 将 Unicode 编码转为字符</p>
+<p><strong>提示：</strong> 是一个静态方法</p>
+</blockquote>
+<h5 id="4-string-concat-string1-string2-…-stringX"><a href="#4-string-concat-string1-string2-…-stringX" class="headerlink" title="4.string.concat(string1, string2, …, stringX)"></a>4.<em>string</em>.concat(<em>string1</em>, <em>string2</em>, …, <em>stringX</em>)</h5><blockquote>
+<p><strong>返回值：</strong> 一个连接后的新的字符串(不改变原字符串)</p>
+<p><strong>提示：</strong> index必须的</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> str1<span class="token operator">=</span><span class="token string">"Hello "</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str2<span class="token operator">=</span><span class="token string">"world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str3<span class="token operator">=</span><span class="token string">" Have a nice day!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n <span class="token operator">=</span> str1<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>str2<span class="token punctuation">,</span>str3<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//Hello world! Have a nice day!</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="5-string-indexOf-searchvalue-start"><a href="#5-string-indexOf-searchvalue-start" class="headerlink" title="5.string.indexOf(searchvalue,start);"></a>5.<em>string</em>.indexOf(<em>searchvalue</em>,<em>start</em>);</h5><blockquote>
+<p><strong>返回值：</strong>  返回查找的字符串第一次被找到的角标,找不到就返回-1(不改变原字符串)</p>
+<p><strong>提示：</strong> 返回值类型是数字，没有查找到searchvalue值时，返回-1</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 案例1：不指定start时，从0开始查找</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world, welcome to the universe."</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"welcome"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//13</span>
+
+<span class="token comment" spellcheck="true">// 案例2：在字符串第五个位置开始查找字符 "e" 第一次出现的位置:</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world, welcome to the universe."</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"e"</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//14</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="6-string-lastIndexOf-searchvalue-start"><a href="#6-string-lastIndexOf-searchvalue-start" class="headerlink" title="6.string.lastIndexOf(searchvalue,start);"></a>6.<em>string</em>.lastIndexOf(<em>searchvalue</em>,<em>start</em>);</h5><blockquote>
+<p><strong>返回值：</strong>  返回查找的字符串最后一次被找到的角标,找不到就返回-1(不改变原字符串)</p>
+<p><strong>提示：</strong> 返回值类型是数字，从后面开始查找，找最后一次被找到的索引</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 案例1：不指定start时，从末尾开始向前查找(如果指定start,就从start开始向前查找)</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello planet earth, you are a great planet."</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"planet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//36</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="7-string-match-regexp-匹配"><a href="#7-string-match-regexp-匹配" class="headerlink" title="7.string.match(regexp)    //匹配"></a>7.<em>string</em>.match(<em>regexp</em>)    //匹配</h5><blockquote>
+<p><strong>返回值：</strong>  在字符串中查找与正则表达式相匹配的值，找到匹配的就返回存放值的一个数组，找不到匹配的就返回null(不改变原字符串)</p>
+<p><strong>提示：</strong> 返回值类型是一个数组</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 案例1：全局查找</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">"HELLO WORLD! javascript is good script language"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> x <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/script/g</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// ["script", "script"]</span>
+
+<span class="token comment" spellcheck="true">// 案例2：全局查找字符串 "ain"，且不区分大小写:</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"The rain in SPAIN stays mainly in the plain"</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/ain/gi</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// ["ain", "AIN", "ain", "ain"]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="8-string-replace-searchvalue-newvalue-替换"><a href="#8-string-replace-searchvalue-newvalue-替换" class="headerlink" title="8.string.replace(searchvalue,newvalue);    //替换"></a>8.<em>string</em>.replace(<em>searchvalue,newvalue</em>);    //替换</h5><blockquote>
+<p><strong>返回值：</strong>一个新的字符串(不改变原字符串)</p>
+<p><strong>提示：</strong>当找到第一个searchvalue时就不会再找第二个，但可以使用正则查找全局(即:/searchvalue/g)</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 案例1：只找到第一个</span>
+<span class="token keyword">var</span> strM <span class="token operator">=</span> <span class="token string">"javascript is a good script language"</span><span class="token punctuation">;</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>strM<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//jAvascript is a good script language</span>
+
+<span class="token comment" spellcheck="true">// 案例2：使用正则找到第一个</span>
+<span class="token keyword">var</span> strM <span class="token operator">=</span> <span class="token string">"javascript is a good script language"</span><span class="token punctuation">;</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>strM<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/a/</span><span class="token punctuation">,</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//jAvascript is a good script language</span>
+
+<span class="token comment" spellcheck="true">// 案例3：使用正则找到所有的a,并替换为A</span>
+<span class="token keyword">var</span> strM <span class="token operator">=</span> <span class="token string">"javascript is a good script language"</span><span class="token punctuation">;</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>strM<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/a/g</span><span class="token punctuation">,</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//jAvAscript is A good script lAnguAge</span>
+
+<span class="token comment" spellcheck="true">// 案例3：忽略大小写</span>
+<span class="token keyword">var</span> strM <span class="token operator">=</span> <span class="token string">"J2r5rR"</span><span class="token punctuation">;</span> 
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>strM<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/r/gi</span><span class="token punctuation">,</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">//J1A5AA</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="9-string-search-searchvalue-查找匹配的值"><a href="#9-string-search-searchvalue-查找匹配的值" class="headerlink" title="9.string.search(searchvalue);    // 查找匹配的值"></a>9.<em>string</em>.search(<em>searchvalue</em>);    // 查找匹配的值</h5><blockquote>
+<p><strong>返回值：</strong>一个数字类型</p>
+<p><strong>提示：</strong>searchvalue是需要查找的字符串或者正则表达式，如果存在，就返回值所在的角标，不存在就返回-1</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 案例1：对大小写敏感</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Mr. Blue has a blue house"</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">"blue"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//15</span>
+
+<span class="token comment" spellcheck="true">// 案例2：忽略大小写</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Mr. Blue has a blue house"</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token regex">/blue/i</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//4</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="10-string-slice-start-end-截取"><a href="#10-string-slice-start-end-截取" class="headerlink" title="10.string.slice(start, end);        //截取"></a>10.string.slice(start, end);        //截取</h5><blockquote>
+<p><strong>返回值</strong>：新的字符串(不改变原字符串)</p>
+<p><strong>提示：</strong> 如果是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符，-2 指倒数第二个字符，以此类推。</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">/*
+*    语法：string.slice(start, end);
+*    start:必须的，要抽取的片断的起始下标。第一个字符位置为 0
+*    end:可选的，不填就截取到字符串的最后
+*/</span>
+
+<span class="token comment" spellcheck="true">// 案例1：从0开始截取到最后</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// Hello world!</span>
+
+<span class="token comment" spellcheck="true">// 案例2：从指定位置开始截取到最后一个</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// lo world!</span>
+
+<span class="token comment" spellcheck="true">// 案例3：从指定位置开始截取到指定下标（闭区间）</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// lo wo</span>
+
+<span class="token comment" spellcheck="true">// 案例4：截取第一个字符</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// H</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 案例5：截取最后一个字符</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// !</span>
+
+<span class="token comment" spellcheck="true">// 案例6：从-str.length开始</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token operator">-</span>str<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// Hello world!（相当于从0到结尾）</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="11-string-split-separator-limit-分割"><a href="#11-string-split-separator-limit-分割" class="headerlink" title="11.string.split(separator,limit)        //分割"></a>11.<em>string</em>.split(<em>separator</em>,<em>limit</em>)        //分割</h5><blockquote>
+<p><strong>返回值</strong>：返回一个数组(不改变原字符串)</p>
+<p><strong>提示：</strong> separator分离器，limit返回的数组的长度。如果把空字符串 (“”) 用作 separator，那么 stringObject 中的每个字符之间都会被分割(案例2)</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 案例1：什么都不写的时候会将字符串按照一个元素添加到数组里</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"How are you doing today?"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// ["How are you doing today?"]</span>
+
+<span class="token comment" spellcheck="true">// 案例2：参数是空格时</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"How are?"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// ["H", "o", "w", " ", "a", "r", "e", "?"]</span>
+
+<span class="token comment" spellcheck="true">// 案例3：指定返回数组的长度</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"How are you doing today?"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// ["How", "are", "you"]</span>
+
+<span class="token comment" spellcheck="true">//  案例4：使用其他字符做分离器</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"How are you doing today?"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"o"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// ["H", "w are y", "u d", "ing t", "day?"]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="12-string-substr-start-length-提取"><a href="#12-string-substr-start-length-提取" class="headerlink" title="12.string.substr(start,length)        //提取"></a>12.<em>string</em>.substr(<em>start</em>,<em>length</em>)        //提取</h5><blockquote>
+<p><strong>返回值</strong>：返回一个字符串(不改变原字符串)</p>
+<p><strong>提示：</strong> 常常使用substr()来代替 substring() 和 slice()</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 从第二个角标开始提取到最后</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// llo world!</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="13-string-substring-start-end-提取"><a href="#13-string-substring-start-end-提取" class="headerlink" title="13.string.substring(start,end)        //提取"></a>13.<em>string</em>.substring(<em>start</em>,end)        //提取</h5><blockquote>
+<p><strong>返回值</strong>：返回一个字符串(不改变原字符串)</p>
+<p><strong>提示：</strong>  左闭右开区间,参数是非负数</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 从第二个角标开始提取到最后</span>
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// llo w</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="14-string-toLowerCast-小写"><a href="#14-string-toLowerCast-小写" class="headerlink" title="14.string.toLowerCast();    //小写"></a>14.string.toLowerCast();    //小写</h5><blockquote>
+<p><strong>返回值</strong>：返回一个字符串(不改变原字符串)</p>
+<p><strong>提示：</strong>  </p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//hello world!</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//Hello world!</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="15-string-toUpperCast-大写"><a href="#15-string-toUpperCast-大写" class="headerlink" title="15.string.toUpperCast();    //大写"></a>15.string.toUpperCast();    //大写</h5><blockquote>
+<p><strong>返回值</strong>：返回一个字符串(不改变原字符串)</p>
+<p><strong>提示：</strong>  </p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//HELLO WORLD!</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//Hello world!</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="16-string-trim"><a href="#16-string-trim" class="headerlink" title="16.string.trim();"></a>16.string.trim();</h5><blockquote>
+<p><strong>返回值</strong>：返回一个字符串(不改变原字符串)</p>
+<p><strong>提示：</strong> </p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">" Hello world! "</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//"Hello world!"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//" Hello world! "</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="17-string-valueOf-字符串原始值"><a href="#17-string-valueOf-字符串原始值" class="headerlink" title="17.string.valueOf();    //字符串原始值"></a>17.string.valueOf();    //字符串原始值</h5><blockquote>
+<p><strong>返回值</strong>：返回字符串对象的原始值</p>
+<p><strong>提示：</strong> 返回值自己本身</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"Hello world!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> n<span class="token operator">=</span>str<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//Hello world!</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><br></p>
+<h4 id="String的包装类方法"><a href="#String的包装类方法" class="headerlink" title="String的包装类方法"></a>String的包装类方法</h4><blockquote>
+<p>在字符串中包装了html标签来达到某种效果</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> txt <span class="token operator">=</span> <span class="token string">"Hello World!"</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>字体变大: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">big</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>字体缩小: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">small</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>字体加粗: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">bold</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>斜体: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">italics</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>固定定位: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">fixed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>加删除线: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">strike</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>字体颜色: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">fontcolor</span><span class="token punctuation">(</span><span class="token string">"green"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>字体大小: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">fontsize</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>下标: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">sub</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>上标: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">sup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>链接: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">link</span><span class="token punctuation">(</span><span class="token string">"http://www.w3cschool.cc"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"&lt;p>闪动文本: "</span> <span class="token operator">+</span> txt<span class="token punctuation">.</span><span class="token function">blink</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" (不能用于IE,Chrome,或者Safari)&lt;/p>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><b>结果如下:</b></p>
+<div style="text-align: center;"><img src="/imglinks/01string.png" alt="01string"></div>
+]]></content>
+      
+        <categories>
+            
+            <category> javascript </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> 内置对象 </tag>
+            
+            <tag> string </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[原型prototype]]></title>
       <url>/2016/09/01/prototype/</url>
       <content type="html"></content>
