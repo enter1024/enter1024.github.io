@@ -85,7 +85,7 @@
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2017/08/">August 2017<span class="archive-count">9</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/05/">May 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/04/">April 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/03/">March 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/02/">February 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/01/">January 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/10/">October 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/09/">September 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/08/">August 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/07/">July 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/05/">May 2016<span class="archive-count">1</span></a>
+        <a class="archive-link" href="/archives/2017/08/">August 2017<span class="archive-count">9</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/05/">May 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/04/">April 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/03/">March 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/02/">February 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/01/">January 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/10/">October 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/09/">September 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/08/">August 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/07/">July 2016<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/05/">May 2016<span class="archive-count">1</span></a>
     </li>
 </ul>
 <!--categories-->
@@ -98,7 +98,7 @@
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="category-link" href="/categories/Ajax/">Ajax<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/ECMAScript/">ECMAScript<span class="category-count">4</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/java/">java<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/javascript/">javascript<span class="category-count">12</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/协议/">协议<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/面试题/">面试题<span class="category-count">1</span></a>
+        <a class="category-link" href="/categories/Ajax/">Ajax<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/ECMAScript/">ECMAScript<span class="category-count">4</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/java/">java<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/javascript/">javascript<span class="category-count">12</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/协议/">协议<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/面试题/">面试题<span class="category-count">2</span></a>
     </li>
 </ul>
 <!--tags-->
@@ -249,6 +249,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> i<span class="token operator">*</span><span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>也可以使用ES6语法中的let来保存块作用域中的变量</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span><span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span> <span class="token keyword">function</span> <span class="token function">timer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> i<span class="token operator">*</span><span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
   </div>
   <!--评论块-->
@@ -283,7 +290,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <nav class="post-nav">
   <!-- Prev Nav -->
     
-  <a href="/2016/08/02/java-object/" id="post_nav-newer" class="post-nav-content prev-content">
+  <a href="/2016/07/16/js-operators/" id="post_nav-newer" class="post-nav-content prev-content">
       新篇
   </a>
     
