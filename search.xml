@@ -620,7 +620,7 @@ obj <span class="token operator">=</span> <span class="token punctuation">{</spa
       <title><![CDATA[js 异步加载的4种方法]]></title>
       <url>/2017/03/19/js-async/</url>
       <content type="html"><![CDATA[<h5 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h5><blockquote>
-<p>$(document).ready<br>需要jquery<br>兼容所有浏览器<br>说明：先出现“加载完成！”的对话框，点确定后才会出现图片</p>
+<p>$(document).ready<br>需要jquery<br>兼容所有浏览器<br>说明：先出现“加载完成！”的对话框，点确定后才会出现图片,即ready方法在dom解析结束后就执行里面的代码，不需要等页面的外部资源加载完成后才执行</p>
 </blockquote>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
@@ -1208,9 +1208,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
         
         <tags>
             
-            <tag> js </tag>
-            
             <tag> 对象 </tag>
+            
+            <tag> js </tag>
             
         </tags>
         
