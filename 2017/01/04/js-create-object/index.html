@@ -85,7 +85,7 @@
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2017/08/">August 2017<span class="archive-count">9</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/05/">May 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/04/">April 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/03/">March 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/02/">February 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/01/">January 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/10/">October 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/09/">September 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/08/">August 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/07/">July 2016<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/05/">May 2016<span class="archive-count">1</span></a>
+        <a class="archive-link" href="/archives/2017/08/">August 2017<span class="archive-count">9</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/05/">May 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/04/">April 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/03/">March 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/02/">February 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/01/">January 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/11/">November 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/10/">October 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/09/">September 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/08/">August 2016<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/07/">July 2016<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/05/">May 2016<span class="archive-count">1</span></a>
     </li>
 </ul>
 <!--categories-->
@@ -98,7 +98,7 @@
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="category-link" href="/categories/Ajax/">Ajax<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/ECMAScript/">ECMAScript<span class="category-count">4</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/java/">java<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/javascript/">javascript<span class="category-count">12</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/协议/">协议<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/面试题/">面试题<span class="category-count">2</span></a>
+        <a class="category-link" href="/categories/Ajax/">Ajax<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/ECMAScript/">ECMAScript<span class="category-count">4</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/java/">java<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/javascript/">javascript<span class="category-count">13</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/协议/">协议<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/面试题/">面试题<span class="category-count">3</span></a>
     </li>
 </ul>
 <!--tags-->
@@ -218,7 +218,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
-<span class="token comment" spellcheck="true">// 第一次升级的写法</span>
+<span class="token comment" spellcheck="true">// 第一次升级:将方法放在构造函数的原型上，这样创建出来的实例对象内部并没有run方法，</span>
+<span class="token comment" spellcheck="true">// 但可以通过实例对象的内部原型__proto__属性去调用该实例对象的构造函数的原型上的run方法，</span>
+<span class="token comment" spellcheck="true">// 这样做可以减少创建实例时的内存损耗</span>
 <span class="token keyword">function</span> Cat <span class="token punctuation">(</span>name<span class="token punctuation">,</span> color<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
       <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span>
@@ -232,10 +234,10 @@ Cat<span class="token punctuation">.</span>prototype <span class="token operator
 <span class="token punctuation">}</span>
 
 
-<span class="token comment" spellcheck="true">// 第二次升级</span>
+<span class="token comment" spellcheck="true">// 第二次升级：将构造函数的形参对象化，即传进一个对象，避免了参数位置要对应的问题</span>
 <span class="token keyword">function</span> Cat <span class="token punctuation">(</span>options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> options<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> options<span class="token punctuation">.</span>color<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 Cat<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
@@ -249,7 +251,7 @@ Cat<span class="token punctuation">.</span>prototype <span class="token operator
     color<span class="token punctuation">:</span> <span class="token string">"black"</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 第三次升级</span>
+<span class="token comment" spellcheck="true">// 第三次升级：将初始化属性抽取成函数，并将初始化任务交给构造函数的原型去做，构造函数只负责调用方法即可</span>
 <span class="token keyword">function</span> Cat <span class="token punctuation">(</span>options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_init</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -263,7 +265,7 @@ Cat<span class="token punctuation">.</span>prototype <span class="token operator
           <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> options<span class="token punctuation">.</span>color <span class="token operator">||</span> <span class="token string">""</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><br></p>
 <h5 id="使用原型的注意事项"><a href="#使用原型的注意事项" class="headerlink" title="使用原型的注意事项"></a>使用原型的注意事项</h5><blockquote>
 <p>1.使用对象访问属性的时候，如果在本身内找不到就会去原型中查找；但是使用点语法进行属性赋值的时候，并不会去原型中进行查找；使用点语法赋值的时候，如果对象中不存在该属性，就会给该对象新增该属性，而不会去修改原型中的属性（实例只使用原型不修改原型，但原型是可以被修改的）</p>
@@ -343,7 +345,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
   <!-- Next Nav -->
     
-  <a href="/2016/10/11/js-string/" id="post_nav-older" class="post-nav-content next-content">
+  <a href="/2016/11/18/web-interview/" id="post_nav-older" class="post-nav-content next-content">
       旧篇
   </a>
     

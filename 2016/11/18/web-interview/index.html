@@ -144,16 +144,85 @@
     
 <article id="post">
   <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-11.png)" >
-  <h2>scroll家族</h2>
+  <h2>js基础面试题</h2>
     
-  <p>作者:李华炎 &nbsp&nbsp 发布于:<time datetime="2017-05-04T09:11:00.000Z">
-          2017-05-04
+  <p>作者:李华炎 &nbsp&nbsp 发布于:<time datetime="2016-11-18T01:55:58.000Z">
+          2016-11-18
     </time>
   </p>
     
   </div>
   <div class="post-page-content">
-  
+  <h5 id="1-js中的数据类型"><a href="#1-js中的数据类型" class="headerlink" title="1-js中的数据类型"></a>1-js中的数据类型</h5><blockquote>
+<p>1.string</p>
+<p>2.number</p>
+<p>3.boolean</p>
+<p>4.undefined</p>
+<p>5.null</p>
+<p>6.object</p>
+</blockquote>
+<p>基本数据类型有(值类型):string、number、boolean、undefined</p>
+<p>引用数据类型有(引用类型):object、null</p>
+<blockquote>
+<p>值类型在赋值的时候会将数据复制一份进行赋值，各自的改变不会影响到对方   </p>
+<p>引用类型间相互赋值时赋值的是引用的地址。这个地址指向的是同一个对象，任何一个发生改变， 其他引用同一个地址的对象也发生改变</p>
+</blockquote>
+<p><br></p>
+<h5 id="2-js的内置对象"><a href="#2-js的内置对象" class="headerlink" title="2-js的内置对象"></a>2-js的内置对象</h5><pre><code>1、Arguments            //函数参数集合    //arguments[&#39;ɑːgjʊm(ə)nts]参数/
+2、Array                //数组
+3、Boolean            //布尔对象
+4、Date                //日期时间对象
+5、Error                //异常对象
+6、Function            //函数构造器
+7、Math                //数学对象
+8、Number            //数组对象
+9、Object            //基础对象
+10、RegExp            //正则表达式对象
+11、Global            // 全局对象        //windou对象已经把global对象的方法实现了
+</code></pre><p><br></p>
+<h5 id="3-等于和全等于的区别"><a href="#3-等于和全等于的区别" class="headerlink" title="3-等于和全等于的区别"></a>3-等于和全等于的区别</h5><blockquote>
+<p>== 只判断值是否相等。如：console.log(null == undefined); //true</p>
+<p>=== 判断值和类型是否相等。如： console.log(null === undefined); //false  </p>
+</blockquote>
+<p><br></p>
+<h5 id="4-for-in-循环"><a href="#4-for-in-循环" class="headerlink" title="4-for in 循环"></a>4-for in 循环</h5><p>for in 操作对象</p>
+<blockquote>
+<p>1.for(key in obj):遍历对象的键</p>
+<p>2.obj[key]:取对象的键所对应的值</p>
+<p>3.一般使用for in 遍历对象是否包含某个属性，属性就是key对应的字符串  </p>
+</blockquote>
+<p>for in 操作数组</p>
+<blockquote>
+<p>1.var arr = [4, 6, 3, 4];</p>
+<p>2.在数组中key就是索引index,如：for(index in arr):遍历数组的索引。结果：0 1 2 3</p>
+<p>3.arr[index]:取数组的键所对应的值。结果：4 6 3 4</p>
+<p>4.对象名[属性名],注意这里的属性名 是字符串,在遍历index时会将index隐式转换为字符串</p>
+<p>5.如果需要判断一个数组中是否包含某个值，有两种方法，最好通过arr.indexOf(3),结果是返回值第一次被找 到时的索引2，如果值不存在就返回-1</p>
+</blockquote>
+<p><br></p>
+<h5 id="5-delete关键字"><a href="#5-delete关键字" class="headerlink" title="5-delete关键字"></a>5-delete关键字</h5><blockquote>
+<p>1.delete可以删除对象的属性，返回值为是否删除成功。如：delete obj.name;</p>
+<p>2.delete可以删除未使用var声明的变量</p>
+<p>3.delete可以删除对象中不存在的变量，结构也是返回true</p>
+<p>4.delete不能删除原型上的变量，不管这个变量是否存在自定义的对象中。如：delete obj.toString(); 结构也是true  </p>
+<p>//delete关键字可以用来删除对象的属性，还有未使用var声明的变量</p>
+<p>//delete关键字有返回值 用来表示删除属性是否成功</p>
+<p>//如果删除的是不存在的属性，返回值为true</p>
+<p>//如果删除的属性存在原型当中，那么返回值为true，但是并未删除</p>
+</blockquote>
+<p> <br></p>
+<h5 id="6-break和continue及return的区别"><a href="#6-break和continue及return的区别" class="headerlink" title="6-break和continue及return的区别"></a>6-break和continue及return的区别</h5><blockquote>
+<p>1.continue结束本次循环，继续执行下一次循环 </p>
+<p>2.break是跳出整个循环或结束整个循环  </p>
+<p>3.return是跳出或结束当前所在的函数</p>
+</blockquote>
+<p><br></p>
+<h5 id="7-return的作用"><a href="#7-return的作用" class="headerlink" title="7-return的作用"></a>7-return的作用</h5><blockquote>
+<p>1.在函数内使用</p>
+<p>2.在函数内可写可不写，看情况</p>
+<p>3.结束函数并返回运行结果</p>
+</blockquote>
+
   </div>
   <!--评论块-->
     
@@ -187,7 +256,7 @@
 <nav class="post-nav">
   <!-- Prev Nav -->
     
-  <a href="/2017/08/01/js-feature/" id="post_nav-newer" class="post-nav-content prev-content">
+  <a href="/2017/01/04/js-create-object/" id="post_nav-newer" class="post-nav-content prev-content">
       新篇
   </a>
     
@@ -195,7 +264,7 @@
 
   <!-- Next Nav -->
     
-  <a href="/2017/04/01/js-offset/" id="post_nav-older" class="post-nav-content next-content">
+  <a href="/2016/10/11/js-string/" id="post_nav-older" class="post-nav-content next-content">
       旧篇
   </a>
     
@@ -203,7 +272,7 @@
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-js中的数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">1-js中的数据类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-js的内置对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">2-js的内置对象</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-等于和全等于的区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">3-等于和全等于的区别</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-for-in-循环"><span class="post-toc-number">4.</span> <span class="post-toc-text">4-for in 循环</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-delete关键字"><span class="post-toc-number">5.</span> <span class="post-toc-text">5-delete关键字</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-break和continue及return的区别"><span class="post-toc-number">6.</span> <span class="post-toc-text">6-break和continue及return的区别</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-return的作用"><span class="post-toc-number">7.</span> <span class="post-toc-text">7-return的作用</span></a></li></ol>
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">
