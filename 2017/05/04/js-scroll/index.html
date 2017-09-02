@@ -153,7 +153,34 @@
     
   </div>
   <div class="post-page-content">
-  
+  <h5 id="scrollLeft-scrollTop"><a href="#scrollLeft-scrollTop" class="headerlink" title="scrollLeft/scrollTop"></a>scrollLeft/scrollTop</h5><ul>
+<li>scrollTop与scrollLeft是元素的自身属性</li>
+<li>scrollTop元素中的内容超出元素上边界的那部分高度（像素值）div.scrollTop</li>
+<li>scrollLeft元素中的内容超出元素左边界的那部分宽度（像素值）div.scrollLeft</li>
+</ul>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 滚动鼠标滚轮时，顶部滚出去的那一部分</span>
+<span class="token keyword">var</span> scrollTop <span class="token operator">=</span> window<span class="token punctuation">.</span>pageYOffset <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollTop <span class="token operator">||</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollTop <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 左边滚出去的那一部分</span>
+<span class="token keyword">var</span> scrollLeft <span class="token operator">=</span> window<span class="token punctuation">.</span>pageXOffset <span class="token operator">||</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollLeft <span class="token operator">||</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollLeft <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><br></p>
+<h5 id="jQuery中的方法"><a href="#jQuery中的方法" class="headerlink" title="jQuery中的方法"></a>jQuery中的方法</h5><ul>
+<li><p>宽度</p>
+<ul>
+<li>$(selector).width() - 设置或返回元素的宽度</li>
+<li>$(selector).innerWidth() - 返回元素的宽度（包含 padding）</li>
+<li>$(selector).outerWidth() - 返回元素的宽度（包含 padding 和 border）</li>
+</ul>
+</li>
+<li><p>高度</p>
+<ul>
+<li>$(selector).height() - 设置或返回元素的高度</li>
+<li>$(selector).innerHeight() - 返回元素的高度（包含 padding）</li>
+<li>$(selector).outerHeight() - 返回元素的高度（包含 padding 和 border）</li>
+</ul>
+</li>
+</ul>
+
   </div>
   <!--评论块-->
     
@@ -203,7 +230,7 @@
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#scrollLeft-scrollTop"><span class="post-toc-number">1.</span> <span class="post-toc-text">scrollLeft/scrollTop</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#jQuery中的方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">jQuery中的方法</span></a></li></ol>
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">
