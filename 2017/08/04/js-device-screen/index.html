@@ -144,7 +144,7 @@
     
 <article id="post">
   <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-6.png)" >
-  <h2>设备屏幕及像素</h2>
+  <h2>设备分辨率及像素</h2>
     
   <p>作者:李华炎 &nbsp&nbsp 发布于:<time datetime="2017-08-04T09:15:22.000Z">
           2017-08-04
@@ -153,7 +153,46 @@
     
   </div>
   <div class="post-page-content">
-  
+  <h5 id="参考设备iphone5"><a href="#参考设备iphone5" class="headerlink" title="参考设备iphone5"></a>参考设备iphone5</h5><blockquote>
+<p>分辨率：  640px * 1136px</p>
+<p>设备像素比 =  640(物理像素) /  320(独立像素) = 2</p>
+</blockquote>
+<p><br></p>
+<h5 id="像素相关"><a href="#像素相关" class="headerlink" title="像素相关"></a>像素相关</h5><blockquote>
+<p>1.什么是设备像素比devicePixelRatio？（设备像素比 = 设备物理像素/设备独立像素）</p>
+<p>2.什么是设备物理像素？简单地说就是竖向手持设备的x轴的像素值，如640*1136中的640就是物理像素</p>
+<p>3.什么是设备独立像素(dip)？简单地来说设备独立像素就是：独立于设备的用于逻辑上衡量像素的单位。如320px</p>
+<p>4.window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。</p>
+</blockquote>
+<p><br></p>
+<h5 id="视口相关"><a href="#视口相关" class="headerlink" title="视口相关"></a>视口相关</h5><blockquote>
+<p>视口分 3 种</p>
+<ol>
+<li>布局视口  960px ，布局视口不会被改变的</li>
+<li>可视视口  即设备上可见的视口，使用手指缩放时改变的是可视视口的大小</li>
+<li>理想视口  是指布局视口在一个设备上的最佳尺寸，便于使用浏览器浏览，阅读</li>
+</ol>
+</blockquote>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!--  指定下面的代码后，布局视口就成为理想视口，阅读体验会更好，网页不会出现被放大的效果 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!--  还可以这样 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width,
+                               minimum-scale<span class="token punctuation">=</span>1.0,    //最小的缩放比例
+                               maximum-scale<span class="token punctuation">=</span>1.0,    //最大的缩放比例
+                               user-scalable<span class="token punctuation">=</span>no        //禁用用户缩放
+                               <span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><br></p>
+<h5 id="单位相关"><a href="#单位相关" class="headerlink" title="单位相关"></a>单位相关</h5><blockquote>
+<p>px/em/rem的区别</p>
+<p>1.1px = 1像素，使用px作为单位是可控性比较强，可以100%还原设计稿  </p>
+<p>2.em是相对长度单位:<br>  　　em 相对参考物为父元素的font-size，父元素没有设置font-size就找祖先元素的font-size<br>  　　em具有继承的特点<br>  　　当没有设置font-size时，浏览器会有一个默认的em值，即1em=16px<br>  　　em的参考物很不稳定，所以有时会出现混淆的效果，使用过程中一定要逐级确认 </p>
+<p>3.rem是先对于html为参考物的长度单位（ie8不支持）<br>  　　rem和em没有多大的区别，只是相对参考物不同，rem单位的长度以根元素html所设置的font-size为准</p>
+</blockquote>
+<h6 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h6><p>1.当在媒体查询中使用rem作为单位时，rme会以浏览器的默认值作为相对长度值，即1rem = 16px，不再是以html作为相对长度了(媒体查询的优先级比较高，会先html中的样式)</p>
+<p>2.在媒体查询中建议使用em,em的兼容性更好</p>
+
   </div>
   <!--评论块-->
     
@@ -203,7 +242,7 @@
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#参考设备iphone5"><span class="post-toc-number">1.</span> <span class="post-toc-text">参考设备iphone5</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#像素相关"><span class="post-toc-number">2.</span> <span class="post-toc-text">像素相关</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#视口相关"><span class="post-toc-number">3.</span> <span class="post-toc-text">视口相关</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#单位相关"><span class="post-toc-number">4.</span> <span class="post-toc-text">单位相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意："><span class="post-toc-number">4.1.</span> <span class="post-toc-text">注意：</span></a></li></ol></li></ol>
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">

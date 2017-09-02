@@ -432,9 +432,48 @@ obj <span class="token operator">=</span> <span class="token punctuation">{</spa
     </entry>
     
     <entry>
-      <title><![CDATA[设备屏幕及像素]]></title>
+      <title><![CDATA[设备分辨率及像素]]></title>
       <url>/2017/08/04/js-device-screen/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<h5 id="参考设备iphone5"><a href="#参考设备iphone5" class="headerlink" title="参考设备iphone5"></a>参考设备iphone5</h5><blockquote>
+<p>分辨率：  640px * 1136px</p>
+<p>设备像素比 =  640(物理像素) /  320(独立像素) = 2</p>
+</blockquote>
+<p><br></p>
+<h5 id="像素相关"><a href="#像素相关" class="headerlink" title="像素相关"></a>像素相关</h5><blockquote>
+<p>1.什么是设备像素比devicePixelRatio？（设备像素比 = 设备物理像素/设备独立像素）</p>
+<p>2.什么是设备物理像素？简单地说就是竖向手持设备的x轴的像素值，如640*1136中的640就是物理像素</p>
+<p>3.什么是设备独立像素(dip)？简单地来说设备独立像素就是：独立于设备的用于逻辑上衡量像素的单位。如320px</p>
+<p>4.window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。</p>
+</blockquote>
+<p><br></p>
+<h5 id="视口相关"><a href="#视口相关" class="headerlink" title="视口相关"></a>视口相关</h5><blockquote>
+<p>视口分 3 种</p>
+<ol>
+<li>布局视口  960px ，布局视口不会被改变的</li>
+<li>可视视口  即设备上可见的视口，使用手指缩放时改变的是可视视口的大小</li>
+<li>理想视口  是指布局视口在一个设备上的最佳尺寸，便于使用浏览器浏览，阅读</li>
+</ol>
+</blockquote>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!--  指定下面的代码后，布局视口就成为理想视口，阅读体验会更好，网页不会出现被放大的效果 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!--  还可以这样 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width,
+                               minimum-scale<span class="token punctuation">=</span>1.0,    //最小的缩放比例
+                               maximum-scale<span class="token punctuation">=</span>1.0,    //最大的缩放比例
+                               user-scalable<span class="token punctuation">=</span>no        //禁用用户缩放
+                               <span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><br></p>
+<h5 id="单位相关"><a href="#单位相关" class="headerlink" title="单位相关"></a>单位相关</h5><blockquote>
+<p>px/em/rem的区别</p>
+<p>1.1px = 1像素，使用px作为单位是可控性比较强，可以100%还原设计稿  </p>
+<p>2.em是相对长度单位:<br>  　　em 相对参考物为父元素的font-size，父元素没有设置font-size就找祖先元素的font-size<br>  　　em具有继承的特点<br>  　　当没有设置font-size时，浏览器会有一个默认的em值，即1em=16px<br>  　　em的参考物很不稳定，所以有时会出现混淆的效果，使用过程中一定要逐级确认 </p>
+<p>3.rem是先对于html为参考物的长度单位（ie8不支持）<br>  　　rem和em没有多大的区别，只是相对参考物不同，rem单位的长度以根元素html所设置的font-size为准</p>
+</blockquote>
+<h6 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h6><p>1.当在媒体查询中使用rem作为单位时，rme会以浏览器的默认值作为相对长度值，即1rem = 16px，不再是以html作为相对长度了(媒体查询的优先级比较高，会先html中的样式)</p>
+<p>2.在媒体查询中建议使用em,em的兼容性更好</p>
+]]></content>
       
         <categories>
             
@@ -684,7 +723,7 @@ obj <span class="token operator">=</span> <span class="token punctuation">{</spa
 </blockquote>
 <p>3xx: 重定向状态码</p>
 <blockquote>
-<p>301: 永久重定向, Location响应首部的值仍为当前URL，因此为隐藏重定向;<br>302: 临时重定向，显式重定向, Location响应首部的值为新的URL<br>304：Not Modified  未修改，比如本地缓存的资源文件和服务器上比较时，发现并没有修改，服务器返回一个304状态码，告诉浏览器，你不用请求该资源，直接使用本地的资源即可。</p>
+<p>301: 永久重定向, Location响应首部的值仍为当前URL，因此为隐藏重定向;<br>302: 临时重定向，显式重定向, Location响应首部的值为新的URL<br>304：Not Modified  未修改，比如本地缓存的资源文件和服务器上比较时，发现并没有修改，服务器返回一个<br>304状态码，告诉浏览器，你不用请求该资源，直接使用本地的资源即可。</p>
 </blockquote>
 <p>4xx: 客户端错误状态码</p>
 <blockquote>
@@ -807,7 +846,7 @@ getResponseHeader()    查询响应中的某个字段的值
 <p>6.error : 失败时的回调，参数是XMLHttpRequest对象</p>
 </blockquote>
 <p><br></p>
-<h5 id="百度静态资源库中的jQuery文件"><a href="#百度静态资源库中的jQuery文件" class="headerlink" title="百度静态资源库中的jQuery文件"></a>百度静态资源库中的jQuery文件</h5><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://apps.bding.com/libs/jquery/1.11.1/jquery.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<h5 id="百度静态资源库中的jQuery文件"><a href="#百度静态资源库中的jQuery文件" class="headerlink" title="百度静态资源库中的jQuery文件"></a>百度静态资源库中的jQuery文件</h5><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://apps.bdimg.com/libs/jquery/1.11.1/jquery.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><br></p>
 <h5 id="服务器端常用的脚本语言及数据库"><a href="#服务器端常用的脚本语言及数据库" class="headerlink" title="服务器端常用的脚本语言及数据库"></a>服务器端常用的脚本语言及数据库</h5><blockquote>
@@ -1208,9 +1247,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
         
         <tags>
             
-            <tag> 对象 </tag>
-            
             <tag> js </tag>
+            
+            <tag> 对象 </tag>
             
         </tags>
         
