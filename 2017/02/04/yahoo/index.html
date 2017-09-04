@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="李华炎的博客 李华炎blog 李华炎blogs blog blogs 李华炎">
+  <meta name="description" content="这是一个集生活与学习总结的个人博客,当你看到这行文字时,也许你距离你要找的东西也不远了！">
+  
+  <title>李华炎&amp;blog</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+<link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/side-header-bg.jpg);background-color:#26A69A">
+    <div class="header-box"><img src="/images/header.jpg" ondragstart="return false;"></div>
+    <p>李华炎</p>
+    <div class="nav-link">
+        
+        <a href="https://github.com/enter1024" target="_blank"> <div class="link-box twitter"></div></a>
+        
+        
+        <a  href="https://github.com/enter1024" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        <a href="mailto:http://example.com"><div class="link-box email"></div></a>
+        
+        
+        <a href="http://weibo.com/u/2835169270" target="_blank"><div class="link-box weibo"></div></a>
+        
+        
+        <a href="https://github.com/enter1024" target="_blank"> <div class="link-box zhihu"></div></a>
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2017/08/">August 2017<span class="archive-count">9</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/05/">May 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/04/">April 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/03/">March 2017<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/02/">February 2017<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/01/">January 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/11/">November 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/10/">October 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/09/">September 2016<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/08/">August 2016<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/07/">July 2016<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2016/05/">May 2016<span class="archive-count">1</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<li class="nav-list dropdown-btn">
+    <a   class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/Ajax/">Ajax<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/ECMAScript/">ECMAScript<span class="category-count">4</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/jQuery/">jQuery<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/java/">java<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/javascript/">javascript<span class="category-count">13</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/协议/">协议<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/面试题/">面试题<span class="category-count">4</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<li class="nav-list">
+    <a href="/photo" class="nopjax" target="_self">
+        <div class="nav-ico"><i class="material-icons">insert_photo</i> </div><p>影集</p>
+    </a>
+</li>
+
+<!--friends-->
+
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
+<!--about-->
+
+<li class="nav-list">
+    <a href="/about" target="_self">
+        <div class="nav-ico"><i class="material-icons">copyright</i> </div><p>关于</p>
+    </a>
+</li>
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-13.png)" >
+  <h2>yahoo</h2>
+    
+  <p>作者:李华炎 &nbsp&nbsp 发布于:<time datetime="2017-02-04T00:17:39.000Z">
+          2017-02-04
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <h3 id="雅虎给出了优化网站加载速度的34条法则"><a href="#雅虎给出了优化网站加载速度的34条法则" class="headerlink" title="雅虎给出了优化网站加载速度的34条法则"></a>雅虎给出了优化网站加载速度的34条法则</h3><h5 id="1-Minimize-HTTP-Requests-减少HTTP请求"><a href="#1-Minimize-HTTP-Requests-减少HTTP请求" class="headerlink" title="1.Minimize HTTP Requests 减少HTTP请求"></a>1.Minimize HTTP Requests 减少HTTP请求</h5><p>图片、css、script、flash等等这些都会增加http请求数，减少这些元素的数量就能减少响应时间。把多个JS、CSS在可能的情况下写进一个文件，页面里直接写入图片也是不好的做法，应该写进CSS里，利用 CSS sprites 将小图拼合后利用background来定位。</p>
+<h5 id="2-Use-a-Content-Delivery-Network-利用CDN技术"><a href="#2-Use-a-Content-Delivery-Network-利用CDN技术" class="headerlink" title="2.Use a Content Delivery Network 利用CDN技术"></a>2.Use a Content Delivery Network 利用CDN技术</h5><p>CDN的全称是Content Delivery Network，即内容分发网络。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。</p>
+<h5 id="3-Add-an-Expires-or-a-Cache-Control-Header-设置头文件过期或者静态缓存"><a href="#3-Add-an-Expires-or-a-Cache-Control-Header-设置头文件过期或者静态缓存" class="headerlink" title="3.Add an Expires or a Cache-Control Header 设置头文件过期或者静态缓存"></a>3.Add an Expires or a Cache-Control Header 设置头文件过期或者静态缓存</h5><p>浏览器会用缓存来减少http请求数来加快页面加载的时间，如果页面头部加一个很长的过期时间，浏览器就会一直缓存页面里的元素。不过这样如果 页面里的东西变动的话就要改名字了，否则用户端不会主动刷新，看自己衡量了~ 这项可以通过修改.htaccess文件来实现。</p>
+<h5 id="4-Gzip-Components-Gzip压缩"><a href="#4-Gzip-Components-Gzip压缩" class="headerlink" title="4.Gzip Components Gzip压缩"></a>4.Gzip Components Gzip压缩</h5><p>Gzip格式是一种很普遍的压缩技术，几乎所有的浏览器都有解压Gzip格式的能力，而且它可以压缩的比例非常大，一般压缩率为85%。压缩没压缩，可以到 这里 做下测试。</p>
+<h5 id="5-Put-Stylesheets-at-the-Top-把CSS放顶部"><a href="#5-Put-Stylesheets-at-the-Top-把CSS放顶部" class="headerlink" title="5.Put Stylesheets at the Top 把CSS放顶部"></a>5.Put Stylesheets at the Top 把CSS放顶部</h5><p>让浏览者能尽早的看到网站的完整样式。<br>HTTP1.1  vs   HTTP2.0</p>
+<h5 id="6-Put-Scripts-at-the-Bottom-把JS放底部"><a href="#6-Put-Scripts-at-the-Bottom-把JS放底部" class="headerlink" title="6.Put Scripts at the Bottom 把JS放底部"></a>6.Put Scripts at the Bottom 把JS放底部</h5><p>网站呈现完毕后再进行功能设置，当然这些JS要在你的加载过程中不影响内容表现。</p>
+<h5 id="7-Avoid-CSS-Expressions-避免CSS-Expressions"><a href="#7-Avoid-CSS-Expressions-避免CSS-Expressions" class="headerlink" title="7.Avoid CSS Expressions 避免CSS Expressions"></a>7.Avoid CSS Expressions 避免CSS Expressions</h5><p>CSS表达式很可怕，这个只被IE支持的东西执行时候的运算量非常大，你移动一下鼠标它都要进行重计算</p>
+<p>的，但有时候为了做浏览器的兼容必须要用到这个||| IE6去死去死！~</p>
+<h5 id="8-Make-JavaScript-and-CSS-External-将JS和CSS外链"><a href="#8-Make-JavaScript-and-CSS-External-将JS和CSS外链" class="headerlink" title="8.Make JavaScript and CSS External 将JS和CSS外链"></a>8.Make JavaScript and CSS External 将JS和CSS外链</h5><p>前面讲到了缓存这个事情，一些较为公用的JS和CSS，我们可以使用外链的形式，譬如我就是从Google外链来的Jquery文件，如果我的浏览者在浏览别的使用了这个外链文件的网站时已经下载并缓存了这个文件，那么他在浏览我的网站的时候就不需要再进行下载了！~</p>
+<h5 id="9-Reduce-DNS-Lookups-减少DNS查找"><a href="#9-Reduce-DNS-Lookups-减少DNS查找" class="headerlink" title="9.Reduce DNS Lookups 减少DNS查找"></a>9.Reduce DNS Lookups 减少DNS查找</h5><p>貌似是要减少网站从外部调用资源，我的Google分析和picasa的外链图片都算在里面了。</p>
+<h5 id="10-Minify-JavaScript-and-CSS-减小JS和CSS的体积"><a href="#10-Minify-JavaScript-and-CSS-减小JS和CSS的体积" class="headerlink" title="10.Minify JavaScript and CSS 减小JS和CSS的体积"></a>10.Minify JavaScript and CSS 减小JS和CSS的体积</h5><p>写JS和CSS都是有技巧的，用最少的代码实现同样的功能，减少空白，增强逻辑性，用缩写方式等等，当然也有不少工具也能够帮你实现这一点。</p>
+<h5 id="11-Avoid-Redirects-避免重定向"><a href="#11-Avoid-Redirects-避免重定向" class="headerlink" title="11.Avoid Redirects 避免重定向"></a>11.Avoid Redirects 避免重定向</h5><p>再写入链接时，虽然”<a href="http://www" target="_blank" rel="external">http://www</a>. today-s-ooxx. com”和”<a href="http://www" target="_blank" rel="external">http://www</a>. today-s-ooxx. com/” 仅有一个最后的”/”只差，但是结果是不同的，服务器需要花时间把前者重定向为后者然后进行跳转，这个要自己注意，也可以在Apache里用Alias 或者mod_rewrite或者DirectorySlash解决。</p>
+<p>​</p>
+<h5 id="12-Remove-Duplicate-Scripts-删除重复脚本"><a href="#12-Remove-Duplicate-Scripts-删除重复脚本" class="headerlink" title="12.Remove Duplicate Scripts 删除重复脚本"></a>12.Remove Duplicate Scripts 删除重复脚本</h5><p>重复调用的代码浏览器并不会识别忽略，而是会再次运算一遍，这当然是大大的浪费。</p>
+<p>​</p>
+<h5 id="13-Configure-ETags-配置ETags"><a href="#13-Configure-ETags-配置ETags" class="headerlink" title="13.Configure ETags 配置ETags"></a>13.Configure ETags 配置ETags</h5><p>搞不清楚咋回事，总之我是在. htaccess里把它删除了。</p>
+<p>​</p>
+<h5 id="14-Make-Ajax-Cacheable-缓存Ajax-几种缓存方式"><a href="#14-Make-Ajax-Cacheable-缓存Ajax-几种缓存方式" class="headerlink" title="14.Make Ajax Cacheable 缓存Ajax 几种缓存方式"></a>14.Make Ajax Cacheable 缓存Ajax 几种缓存方式</h5><p>Ajax是实时响应的，在浏览器接收到新的数据前，旧的数据被缓存，这样能够更好的提高效率。</p>
+<p>​</p>
+<h5 id="15、Flush-the-Buffer-Early-尽早的释放缓冲"><a href="#15、Flush-the-Buffer-Early-尽早的释放缓冲" class="headerlink" title="15、Flush the Buffer Early 尽早的释放缓冲"></a>15、Flush the Buffer Early 尽早的释放缓冲</h5><p>当用户进行页面请求时，服务器端需要花费200到500毫秒时间来拼合HTML，将写在head与body之间，释放缓冲，这样可以将文件头先发送出去，然后再发送文件内容，提高效率。</p>
+<p>​</p>
+<h5 id="16、Use-GET-for-AJAX-Requests-用GET方式进行AJAX请求"><a href="#16、Use-GET-for-AJAX-Requests-用GET方式进行AJAX请求" class="headerlink" title="16、Use GET for AJAX Requests 用GET方式进行AJAX请求"></a>16、Use GET for AJAX Requests 用GET方式进行AJAX请求</h5><p>Get 方法和服务器只有一次交互（发送数据），而 Post 要两次（发送头部再发送数据）。</p>
+<p>​</p>
+<h5 id="17、Post-load-Components-延迟加载组件"><a href="#17、Post-load-Components-延迟加载组件" class="headerlink" title="17、Post-load Components 延迟加载组件"></a>17、Post-load Components 延迟加载组件</h5><p>最先加载必须的组件进行页面初始化，然后再加载其他，YUI Image Loader 是很好的例子。</p>
+<p>​</p>
+<ol>
+<li><h5 id="Preload-components-预加载组件"><a href="#Preload-components-预加载组件" class="headerlink" title="Preload components 预加载组件"></a>Preload components 预加载组件</h5><p>提前加载以后可能用到的东西，和延迟加载并不冲突，它的目的是为后续请求提供更快的响应，参见Google首页上的CSS sprites应用。</p>
+<p>​</p>
+</li>
+<li><h5 id="Reduce-the-Number-of-DOM-Elements-减少DOM元素数量"><a href="#Reduce-the-Number-of-DOM-Elements-减少DOM元素数量" class="headerlink" title="Reduce the Number of DOM Elements 减少DOM元素数量"></a>Reduce the Number of DOM Elements 减少DOM元素数量</h5><p>复杂的页面结构意味着更长的下载及响应时间，更合理更高效的使用标签来架构页面，是好的前端的必备条件。</p>
+<p>​</p>
+</li>
+<li><h5 id="Split-Components-Across-Domains-跨域分离组件"><a href="#Split-Components-Across-Domains-跨域分离组件" class="headerlink" title="Split Components Across Domains 跨域分离组件"></a>Split Components Across Domains 跨域分离组件</h5><p>页面组件多个来源可以增大你的平行下载量，但注意不要过多，超过2-4个域名会引起上面说到的DNS查找浪费。</p>
+<p>​</p>
+</li>
+<li><h5 id="Minimize-the-Number-of-iframes-减少iframe数量"><a href="#Minimize-the-Number-of-iframes-减少iframe数量" class="headerlink" title="Minimize the Number of iframes 减少iframe数量"></a>Minimize the Number of iframes 减少iframe数量</h5><p>需要更有效的利用 ifames。<br>iframe 优点：有利于下载缓慢的广告等第三方内容，安全沙箱，并行下载脚本<br>iframe 缺点：让页面结构变得复杂，难以维护。</p>
+<p>​</p>
+</li>
+<li><h5 id="No-404s-不要出现404页面"><a href="#No-404s-不要出现404页面" class="headerlink" title="No 404s 不要出现404页面"></a>No 404s 不要出现404页面</h5><p>站点本身里（非搜索结果）出现404页面，无意义的404页面会影响用户体验并且会消耗服务器资源。</p>
+<p>​</p>
+</li>
+<li><h5 id="Reduce-Cookie-Size-减小Cookie"><a href="#Reduce-Cookie-Size-减小Cookie" class="headerlink" title="Reduce Cookie Size 减小Cookie"></a>Reduce Cookie Size 减小Cookie</h5><p>Cookie在服务器及浏览器之间的通过文件头进行交换，尽可能减小Cookie体积，设置合理的过期时间，能够很好的提高效率。</p>
+<p>​</p>
+</li>
+<li><h5 id="Use-Cookie-free-Domains-for-Components-对组件使用无Cookie的域名"><a href="#Use-Cookie-free-Domains-for-Components-对组件使用无Cookie的域名" class="headerlink" title="Use Cookie-free Domains for Components 对组件使用无Cookie的域名"></a>Use Cookie-free Domains for Components 对组件使用无Cookie的域名</h5><p>对静态组件的Cookie读取是一种浪费，使用另一个无Cookie的域名来存放你的静态组件式一个好方法，或者也可以在Cookie中只存放带www的域名。</p>
+<p>​</p>
+</li>
+<li><h5 id="Minimize-DOM-Access-减少DOM的访问次数"><a href="#Minimize-DOM-Access-减少DOM的访问次数" class="headerlink" title="Minimize DOM Access 减少DOM的访问次数"></a>Minimize DOM Access 减少DOM的访问次数</h5><p>JS访问DOM是很慢的，尽量不要用JS来设置页面布局。</p>
+<p>​</p>
+</li>
+<li><h5 id="Develop-Smart-Event-Handlers-开发灵活的事件处理句柄"><a href="#Develop-Smart-Event-Handlers-开发灵活的事件处理句柄" class="headerlink" title="Develop Smart Event Handlers 开发灵活的事件处理句柄"></a>Develop Smart Event Handlers 开发灵活的事件处理句柄</h5><p>DOM树上过多的元素被加入事件句柄的话，反应效率肯定会低，YUI事件工具有一个 onAvailable 方法可以帮助你灵活的设置DOM事件句柄</p>
+<p>​</p>
+</li>
+<li><h5 id="Choose-lt-link-gt-over-import-使用-lt-link-gt-而非-import"><a href="#Choose-lt-link-gt-over-import-使用-lt-link-gt-而非-import" class="headerlink" title="Choose &lt; link &gt;over @import 使用&lt; link &gt;而非 @import"></a>Choose &lt; link &gt;over @import 使用&lt; link &gt;而非 @import</h5><p>在IE中使用@import就和在页面底部用&lt; link &gt;一样，我们前面说要把&lt; link &gt;放顶部的。</p>
+<p>​</p>
+</li>
+<li><h5 id="Avoid-Filters-避免过滤器的使用"><a href="#Avoid-Filters-避免过滤器的使用" class="headerlink" title="Avoid Filters 避免过滤器的使用"></a>Avoid Filters 避免过滤器的使用</h5><p>如果需要Alpha透明，不要使用AlphaImageLoader，它效率低下而且只对IE6及以下的版本适用，用PNG8图片。如果你非要使用，加上_filter以免影响IE7+用户。</p>
+<p>​</p>
+</li>
+<li><h5 id="Optimize-Images-优化图片"><a href="#Optimize-Images-优化图片" class="headerlink" title="Optimize Images 优化图片"></a>Optimize Images 优化图片</h5><p>将你的GIF转为PNG8会是个减小体积的好办法，另外有很多方法处理你的JPG及PNG图片以达到优化效果。</p>
+<p>​</p>
+</li>
+<li><h5 id="Optimize-CSS-Sprites-优化CSS-Sprites"><a href="#Optimize-CSS-Sprites-优化CSS-Sprites" class="headerlink" title="Optimize CSS Sprites 优化CSS Sprites"></a>Optimize CSS Sprites 优化CSS Sprites</h5><p>在CSS Sprites中竖直并尽量紧凑的排列图片，尽量将颜色相似的图片排在一起，会减小图片本身的大小及提高页面图片显示速度。</p>
+<p>​</p>
+</li>
+<li><h5 id="Don’t-Scale-Images-in-HTML-不要在HTML中缩放图片"><a href="#Don’t-Scale-Images-in-HTML-不要在HTML中缩放图片" class="headerlink" title="Don’t Scale Images in HTML 不要在HTML中缩放图片"></a>Don’t Scale Images in HTML 不要在HTML中缩放图片</h5><p>图片要用多大的就用多大的，1000X1000的图片被width=”100″ height=”100″以后，本身的KB数是不会减少的。</p>
+<p>​</p>
+</li>
+<li><h5 id="Make-favicon-ico-Small-and-Cacheable-缩小favicon-ico的大小并缓存它"><a href="#Make-favicon-ico-Small-and-Cacheable-缩小favicon-ico的大小并缓存它" class="headerlink" title="Make favicon. ico Small and Cacheable 缩小favicon. ico的大小并缓存它"></a>Make favicon. ico Small and Cacheable 缩小favicon. ico的大小并缓存它</h5><p>站点的浏览器ICO应该不是经常换吧，那就长时间的缓存它，并且最好控制在1K以下。</p>
+<p>​</p>
+</li>
+<li><h5 id="Keep-Components-under-25K-保证组件在25K以下"><a href="#Keep-Components-under-25K-保证组件在25K以下" class="headerlink" title="Keep Components under 25K 保证组件在25K以下"></a>Keep Components under 25K 保证组件在25K以下</h5><p>iPhone不能缓存25K以上的组件，并且这还是要在被压缩前。</p>
+<p>​</p>
+</li>
+<li><h5 id="Pack-Components-into-a-Multipart-Document-将组件打包进一个多部分的文档中"><a href="#Pack-Components-into-a-Multipart-Document-将组件打包进一个多部分的文档中" class="headerlink" title="Pack Components into a Multipart Document 将组件打包进一个多部分的文档中"></a>Pack Components into a Multipart Document 将组件打包进一个多部分的文档中</h5><p>就好像在邮件中加入附件一样，一个HTTP请求就够了，但是这一技术需要确保你的代理支持，iPhone就不支持。</p>
+</li>
+</ol>
+
+  </div>
+  <!--评论块-->
+    
+  <div id="disqus_thread" style="padding:30px;text-align: center;border-top:1px solid silver " data-diaque="enterlhy-disqus-com.disqus.com"><button style="margin: 0 auto;background-color:#26A69A " class="btn" onclick="disqus()">加载评论(被墙则无法加载)</button></div>
+
+  <script>
+
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */
+      function disqus() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script'),v = d.createElement('script'),disquUrl=document.getElementById("disqus_thread").dataset.diaque;
+          v.id = 'dsq-count-scr'
+          v.src= '//'+disquUrl+'/count.js';
+          s.src = 'https://'+disquUrl+'/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(v);
+          (d.head || d.body).appendChild(s);
+      }
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+  <a href="/2017/02/04/js-call-apply/" id="post_nav-newer" class="post-nav-content prev-content">
+      新篇
+  </a>
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2017/02/04/jq-all/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#雅虎给出了优化网站加载速度的34条法则"><span class="post-toc-number">1.</span> <span class="post-toc-text">雅虎给出了优化网站加载速度的34条法则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-Minimize-HTTP-Requests-减少HTTP请求"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">1.Minimize HTTP Requests 减少HTTP请求</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-Use-a-Content-Delivery-Network-利用CDN技术"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">2.Use a Content Delivery Network 利用CDN技术</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-Add-an-Expires-or-a-Cache-Control-Header-设置头文件过期或者静态缓存"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">3.Add an Expires or a Cache-Control Header 设置头文件过期或者静态缓存</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-Gzip-Components-Gzip压缩"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">4.Gzip Components Gzip压缩</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-Put-Stylesheets-at-the-Top-把CSS放顶部"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">5.Put Stylesheets at the Top 把CSS放顶部</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-Put-Scripts-at-the-Bottom-把JS放底部"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">6.Put Scripts at the Bottom 把JS放底部</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-Avoid-CSS-Expressions-避免CSS-Expressions"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">7.Avoid CSS Expressions 避免CSS Expressions</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#8-Make-JavaScript-and-CSS-External-将JS和CSS外链"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">8.Make JavaScript and CSS External 将JS和CSS外链</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#9-Reduce-DNS-Lookups-减少DNS查找"><span class="post-toc-number">1.0.9.</span> <span class="post-toc-text">9.Reduce DNS Lookups 减少DNS查找</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#10-Minify-JavaScript-and-CSS-减小JS和CSS的体积"><span class="post-toc-number">1.0.10.</span> <span class="post-toc-text">10.Minify JavaScript and CSS 减小JS和CSS的体积</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#11-Avoid-Redirects-避免重定向"><span class="post-toc-number">1.0.11.</span> <span class="post-toc-text">11.Avoid Redirects 避免重定向</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#12-Remove-Duplicate-Scripts-删除重复脚本"><span class="post-toc-number">1.0.12.</span> <span class="post-toc-text">12.Remove Duplicate Scripts 删除重复脚本</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#13-Configure-ETags-配置ETags"><span class="post-toc-number">1.0.13.</span> <span class="post-toc-text">13.Configure ETags 配置ETags</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#14-Make-Ajax-Cacheable-缓存Ajax-几种缓存方式"><span class="post-toc-number">1.0.14.</span> <span class="post-toc-text">14.Make Ajax Cacheable 缓存Ajax 几种缓存方式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#15、Flush-the-Buffer-Early-尽早的释放缓冲"><span class="post-toc-number">1.0.15.</span> <span class="post-toc-text">15、Flush the Buffer Early 尽早的释放缓冲</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#16、Use-GET-for-AJAX-Requests-用GET方式进行AJAX请求"><span class="post-toc-number">1.0.16.</span> <span class="post-toc-text">16、Use GET for AJAX Requests 用GET方式进行AJAX请求</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#17、Post-load-Components-延迟加载组件"><span class="post-toc-number">1.0.17.</span> <span class="post-toc-text">17、Post-load Components 延迟加载组件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Preload-components-预加载组件"><span class="post-toc-number">1.0.18.</span> <span class="post-toc-text">Preload components 预加载组件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Reduce-the-Number-of-DOM-Elements-减少DOM元素数量"><span class="post-toc-number">1.0.19.</span> <span class="post-toc-text">Reduce the Number of DOM Elements 减少DOM元素数量</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Split-Components-Across-Domains-跨域分离组件"><span class="post-toc-number">1.0.20.</span> <span class="post-toc-text">Split Components Across Domains 跨域分离组件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Minimize-the-Number-of-iframes-减少iframe数量"><span class="post-toc-number">1.0.21.</span> <span class="post-toc-text">Minimize the Number of iframes 减少iframe数量</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#No-404s-不要出现404页面"><span class="post-toc-number">1.0.22.</span> <span class="post-toc-text">No 404s 不要出现404页面</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Reduce-Cookie-Size-减小Cookie"><span class="post-toc-number">1.0.23.</span> <span class="post-toc-text">Reduce Cookie Size 减小Cookie</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Use-Cookie-free-Domains-for-Components-对组件使用无Cookie的域名"><span class="post-toc-number">1.0.24.</span> <span class="post-toc-text">Use Cookie-free Domains for Components 对组件使用无Cookie的域名</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Minimize-DOM-Access-减少DOM的访问次数"><span class="post-toc-number">1.0.25.</span> <span class="post-toc-text">Minimize DOM Access 减少DOM的访问次数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Develop-Smart-Event-Handlers-开发灵活的事件处理句柄"><span class="post-toc-number">1.0.26.</span> <span class="post-toc-text">Develop Smart Event Handlers 开发灵活的事件处理句柄</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Choose-lt-link-gt-over-import-使用-lt-link-gt-而非-import"><span class="post-toc-number">1.0.27.</span> <span class="post-toc-text">Choose < link >over @import 使用< link >而非 @import</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Avoid-Filters-避免过滤器的使用"><span class="post-toc-number">1.0.28.</span> <span class="post-toc-text">Avoid Filters 避免过滤器的使用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Optimize-Images-优化图片"><span class="post-toc-number">1.0.29.</span> <span class="post-toc-text">Optimize Images 优化图片</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Optimize-CSS-Sprites-优化CSS-Sprites"><span class="post-toc-number">1.0.30.</span> <span class="post-toc-text">Optimize CSS Sprites 优化CSS Sprites</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Don’t-Scale-Images-in-HTML-不要在HTML中缩放图片"><span class="post-toc-number">1.0.31.</span> <span class="post-toc-text">Don’t Scale Images in HTML 不要在HTML中缩放图片</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Make-favicon-ico-Small-and-Cacheable-缩小favicon-ico的大小并缓存它"><span class="post-toc-number">1.0.32.</span> <span class="post-toc-text">Make favicon. ico Small and Cacheable 缩小favicon. ico的大小并缓存它</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Keep-Components-under-25K-保证组件在25K以下"><span class="post-toc-number">1.0.33.</span> <span class="post-toc-text">Keep Components under 25K 保证组件在25K以下</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Pack-Components-into-a-Multipart-Document-将组件打包进一个多部分的文档中"><span class="post-toc-number">1.0.34.</span> <span class="post-toc-text">Pack Components into a Multipart Document 将组件打包进一个多部分的文档中</span></a></li></ol></li></ol></li></ol>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p >Copyright ©  2017  李华炎&amp;blog</p>
+<p >Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> & Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+<p style="font-size: 10px" id="footer-times" data-time="1/1/2016 00:00:00"></p>
+<script>
+    var beginTime=document.getElementById("footer-times").dataset.time
+    function show_date_time(){
+        var span=document.getElementById("footer-times")
+        window.setTimeout("show_date_time()", 1000);
+        BirthDay=new Date(beginTime);//初始日期
+        today=new Date();
+        timeold=(today.getTime()-BirthDay.getTime());
+        sectimeold=timeold/1000
+        secondsold=Math.floor(sectimeold);
+        msPerDay=24*60*60*1000
+        e_daysold=timeold/msPerDay
+        daysold=Math.floor(e_daysold);
+        e_hrsold=(e_daysold-daysold)*24;
+        hrsold=Math.floor(e_hrsold);
+        e_minsold=(e_hrsold-hrsold)*60;
+        minsold=Math.floor((e_hrsold-hrsold)*60);
+        seconds=Math.floor((e_minsold-minsold)*60);
+        span.innerHTML="本站已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+    }
+    show_date_time();
+</script>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+</body>
+</html>

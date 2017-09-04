@@ -1199,6 +1199,505 @@ document<span class="token punctuation">.</span><span class="token function">que
     </entry>
     
     <entry>
+      <title><![CDATA[yahoo]]></title>
+      <url>/2017/02/04/yahoo/</url>
+      <content type="html"><![CDATA[<h3 id="雅虎给出了优化网站加载速度的34条法则"><a href="#雅虎给出了优化网站加载速度的34条法则" class="headerlink" title="雅虎给出了优化网站加载速度的34条法则"></a>雅虎给出了优化网站加载速度的34条法则</h3><h5 id="1-Minimize-HTTP-Requests-减少HTTP请求"><a href="#1-Minimize-HTTP-Requests-减少HTTP请求" class="headerlink" title="1.Minimize HTTP Requests 减少HTTP请求"></a>1.Minimize HTTP Requests 减少HTTP请求</h5><p>图片、css、script、flash等等这些都会增加http请求数，减少这些元素的数量就能减少响应时间。把多个JS、CSS在可能的情况下写进一个文件，页面里直接写入图片也是不好的做法，应该写进CSS里，利用 CSS sprites 将小图拼合后利用background来定位。</p>
+<h5 id="2-Use-a-Content-Delivery-Network-利用CDN技术"><a href="#2-Use-a-Content-Delivery-Network-利用CDN技术" class="headerlink" title="2.Use a Content Delivery Network 利用CDN技术"></a>2.Use a Content Delivery Network 利用CDN技术</h5><p>CDN的全称是Content Delivery Network，即内容分发网络。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。</p>
+<h5 id="3-Add-an-Expires-or-a-Cache-Control-Header-设置头文件过期或者静态缓存"><a href="#3-Add-an-Expires-or-a-Cache-Control-Header-设置头文件过期或者静态缓存" class="headerlink" title="3.Add an Expires or a Cache-Control Header 设置头文件过期或者静态缓存"></a>3.Add an Expires or a Cache-Control Header 设置头文件过期或者静态缓存</h5><p>浏览器会用缓存来减少http请求数来加快页面加载的时间，如果页面头部加一个很长的过期时间，浏览器就会一直缓存页面里的元素。不过这样如果 页面里的东西变动的话就要改名字了，否则用户端不会主动刷新，看自己衡量了~ 这项可以通过修改.htaccess文件来实现。</p>
+<h5 id="4-Gzip-Components-Gzip压缩"><a href="#4-Gzip-Components-Gzip压缩" class="headerlink" title="4.Gzip Components Gzip压缩"></a>4.Gzip Components Gzip压缩</h5><p>Gzip格式是一种很普遍的压缩技术，几乎所有的浏览器都有解压Gzip格式的能力，而且它可以压缩的比例非常大，一般压缩率为85%。压缩没压缩，可以到 这里 做下测试。</p>
+<h5 id="5-Put-Stylesheets-at-the-Top-把CSS放顶部"><a href="#5-Put-Stylesheets-at-the-Top-把CSS放顶部" class="headerlink" title="5.Put Stylesheets at the Top 把CSS放顶部"></a>5.Put Stylesheets at the Top 把CSS放顶部</h5><p>让浏览者能尽早的看到网站的完整样式。<br>HTTP1.1  vs   HTTP2.0</p>
+<h5 id="6-Put-Scripts-at-the-Bottom-把JS放底部"><a href="#6-Put-Scripts-at-the-Bottom-把JS放底部" class="headerlink" title="6.Put Scripts at the Bottom 把JS放底部"></a>6.Put Scripts at the Bottom 把JS放底部</h5><p>网站呈现完毕后再进行功能设置，当然这些JS要在你的加载过程中不影响内容表现。</p>
+<h5 id="7-Avoid-CSS-Expressions-避免CSS-Expressions"><a href="#7-Avoid-CSS-Expressions-避免CSS-Expressions" class="headerlink" title="7.Avoid CSS Expressions 避免CSS Expressions"></a>7.Avoid CSS Expressions 避免CSS Expressions</h5><p>CSS表达式很可怕，这个只被IE支持的东西执行时候的运算量非常大，你移动一下鼠标它都要进行重计算</p>
+<p>的，但有时候为了做浏览器的兼容必须要用到这个||| IE6去死去死！~</p>
+<h5 id="8-Make-JavaScript-and-CSS-External-将JS和CSS外链"><a href="#8-Make-JavaScript-and-CSS-External-将JS和CSS外链" class="headerlink" title="8.Make JavaScript and CSS External 将JS和CSS外链"></a>8.Make JavaScript and CSS External 将JS和CSS外链</h5><p>前面讲到了缓存这个事情，一些较为公用的JS和CSS，我们可以使用外链的形式，譬如我就是从Google外链来的Jquery文件，如果我的浏览者在浏览别的使用了这个外链文件的网站时已经下载并缓存了这个文件，那么他在浏览我的网站的时候就不需要再进行下载了！~</p>
+<h5 id="9-Reduce-DNS-Lookups-减少DNS查找"><a href="#9-Reduce-DNS-Lookups-减少DNS查找" class="headerlink" title="9.Reduce DNS Lookups 减少DNS查找"></a>9.Reduce DNS Lookups 减少DNS查找</h5><p>貌似是要减少网站从外部调用资源，我的Google分析和picasa的外链图片都算在里面了。</p>
+<h5 id="10-Minify-JavaScript-and-CSS-减小JS和CSS的体积"><a href="#10-Minify-JavaScript-and-CSS-减小JS和CSS的体积" class="headerlink" title="10.Minify JavaScript and CSS 减小JS和CSS的体积"></a>10.Minify JavaScript and CSS 减小JS和CSS的体积</h5><p>写JS和CSS都是有技巧的，用最少的代码实现同样的功能，减少空白，增强逻辑性，用缩写方式等等，当然也有不少工具也能够帮你实现这一点。</p>
+<h5 id="11-Avoid-Redirects-避免重定向"><a href="#11-Avoid-Redirects-避免重定向" class="headerlink" title="11.Avoid Redirects 避免重定向"></a>11.Avoid Redirects 避免重定向</h5><p>再写入链接时，虽然”<a href="http://www" target="_blank" rel="external">http://www</a>. today-s-ooxx. com”和”<a href="http://www" target="_blank" rel="external">http://www</a>. today-s-ooxx. com/” 仅有一个最后的”/”只差，但是结果是不同的，服务器需要花时间把前者重定向为后者然后进行跳转，这个要自己注意，也可以在Apache里用Alias 或者mod_rewrite或者DirectorySlash解决。</p>
+<p>​</p>
+<h5 id="12-Remove-Duplicate-Scripts-删除重复脚本"><a href="#12-Remove-Duplicate-Scripts-删除重复脚本" class="headerlink" title="12.Remove Duplicate Scripts 删除重复脚本"></a>12.Remove Duplicate Scripts 删除重复脚本</h5><p>重复调用的代码浏览器并不会识别忽略，而是会再次运算一遍，这当然是大大的浪费。</p>
+<p>​</p>
+<h5 id="13-Configure-ETags-配置ETags"><a href="#13-Configure-ETags-配置ETags" class="headerlink" title="13.Configure ETags 配置ETags"></a>13.Configure ETags 配置ETags</h5><p>搞不清楚咋回事，总之我是在. htaccess里把它删除了。</p>
+<p>​</p>
+<h5 id="14-Make-Ajax-Cacheable-缓存Ajax-几种缓存方式"><a href="#14-Make-Ajax-Cacheable-缓存Ajax-几种缓存方式" class="headerlink" title="14.Make Ajax Cacheable 缓存Ajax 几种缓存方式"></a>14.Make Ajax Cacheable 缓存Ajax 几种缓存方式</h5><p>Ajax是实时响应的，在浏览器接收到新的数据前，旧的数据被缓存，这样能够更好的提高效率。</p>
+<p>​</p>
+<h5 id="15、Flush-the-Buffer-Early-尽早的释放缓冲"><a href="#15、Flush-the-Buffer-Early-尽早的释放缓冲" class="headerlink" title="15、Flush the Buffer Early 尽早的释放缓冲"></a>15、Flush the Buffer Early 尽早的释放缓冲</h5><p>当用户进行页面请求时，服务器端需要花费200到500毫秒时间来拼合HTML，将写在head与body之间，释放缓冲，这样可以将文件头先发送出去，然后再发送文件内容，提高效率。</p>
+<p>​</p>
+<h5 id="16、Use-GET-for-AJAX-Requests-用GET方式进行AJAX请求"><a href="#16、Use-GET-for-AJAX-Requests-用GET方式进行AJAX请求" class="headerlink" title="16、Use GET for AJAX Requests 用GET方式进行AJAX请求"></a>16、Use GET for AJAX Requests 用GET方式进行AJAX请求</h5><p>Get 方法和服务器只有一次交互（发送数据），而 Post 要两次（发送头部再发送数据）。</p>
+<p>​</p>
+<h5 id="17、Post-load-Components-延迟加载组件"><a href="#17、Post-load-Components-延迟加载组件" class="headerlink" title="17、Post-load Components 延迟加载组件"></a>17、Post-load Components 延迟加载组件</h5><p>最先加载必须的组件进行页面初始化，然后再加载其他，YUI Image Loader 是很好的例子。</p>
+<p>​</p>
+<ol>
+<li><h5 id="Preload-components-预加载组件"><a href="#Preload-components-预加载组件" class="headerlink" title="Preload components 预加载组件"></a>Preload components 预加载组件</h5><p>提前加载以后可能用到的东西，和延迟加载并不冲突，它的目的是为后续请求提供更快的响应，参见Google首页上的CSS sprites应用。</p>
+<p>​</p>
+</li>
+<li><h5 id="Reduce-the-Number-of-DOM-Elements-减少DOM元素数量"><a href="#Reduce-the-Number-of-DOM-Elements-减少DOM元素数量" class="headerlink" title="Reduce the Number of DOM Elements 减少DOM元素数量"></a>Reduce the Number of DOM Elements 减少DOM元素数量</h5><p>复杂的页面结构意味着更长的下载及响应时间，更合理更高效的使用标签来架构页面，是好的前端的必备条件。</p>
+<p>​</p>
+</li>
+<li><h5 id="Split-Components-Across-Domains-跨域分离组件"><a href="#Split-Components-Across-Domains-跨域分离组件" class="headerlink" title="Split Components Across Domains 跨域分离组件"></a>Split Components Across Domains 跨域分离组件</h5><p>页面组件多个来源可以增大你的平行下载量，但注意不要过多，超过2-4个域名会引起上面说到的DNS查找浪费。</p>
+<p>​</p>
+</li>
+<li><h5 id="Minimize-the-Number-of-iframes-减少iframe数量"><a href="#Minimize-the-Number-of-iframes-减少iframe数量" class="headerlink" title="Minimize the Number of iframes 减少iframe数量"></a>Minimize the Number of iframes 减少iframe数量</h5><p>需要更有效的利用 ifames。<br>iframe 优点：有利于下载缓慢的广告等第三方内容，安全沙箱，并行下载脚本<br>iframe 缺点：让页面结构变得复杂，难以维护。</p>
+<p>​</p>
+</li>
+<li><h5 id="No-404s-不要出现404页面"><a href="#No-404s-不要出现404页面" class="headerlink" title="No 404s 不要出现404页面"></a>No 404s 不要出现404页面</h5><p>站点本身里（非搜索结果）出现404页面，无意义的404页面会影响用户体验并且会消耗服务器资源。</p>
+<p>​</p>
+</li>
+<li><h5 id="Reduce-Cookie-Size-减小Cookie"><a href="#Reduce-Cookie-Size-减小Cookie" class="headerlink" title="Reduce Cookie Size 减小Cookie"></a>Reduce Cookie Size 减小Cookie</h5><p>Cookie在服务器及浏览器之间的通过文件头进行交换，尽可能减小Cookie体积，设置合理的过期时间，能够很好的提高效率。</p>
+<p>​</p>
+</li>
+<li><h5 id="Use-Cookie-free-Domains-for-Components-对组件使用无Cookie的域名"><a href="#Use-Cookie-free-Domains-for-Components-对组件使用无Cookie的域名" class="headerlink" title="Use Cookie-free Domains for Components 对组件使用无Cookie的域名"></a>Use Cookie-free Domains for Components 对组件使用无Cookie的域名</h5><p>对静态组件的Cookie读取是一种浪费，使用另一个无Cookie的域名来存放你的静态组件式一个好方法，或者也可以在Cookie中只存放带www的域名。</p>
+<p>​</p>
+</li>
+<li><h5 id="Minimize-DOM-Access-减少DOM的访问次数"><a href="#Minimize-DOM-Access-减少DOM的访问次数" class="headerlink" title="Minimize DOM Access 减少DOM的访问次数"></a>Minimize DOM Access 减少DOM的访问次数</h5><p>JS访问DOM是很慢的，尽量不要用JS来设置页面布局。</p>
+<p>​</p>
+</li>
+<li><h5 id="Develop-Smart-Event-Handlers-开发灵活的事件处理句柄"><a href="#Develop-Smart-Event-Handlers-开发灵活的事件处理句柄" class="headerlink" title="Develop Smart Event Handlers 开发灵活的事件处理句柄"></a>Develop Smart Event Handlers 开发灵活的事件处理句柄</h5><p>DOM树上过多的元素被加入事件句柄的话，反应效率肯定会低，YUI事件工具有一个 onAvailable 方法可以帮助你灵活的设置DOM事件句柄</p>
+<p>​</p>
+</li>
+<li><h5 id="Choose-lt-link-gt-over-import-使用-lt-link-gt-而非-import"><a href="#Choose-lt-link-gt-over-import-使用-lt-link-gt-而非-import" class="headerlink" title="Choose &lt; link &gt;over @import 使用&lt; link &gt;而非 @import"></a>Choose &lt; link &gt;over @import 使用&lt; link &gt;而非 @import</h5><p>在IE中使用@import就和在页面底部用&lt; link &gt;一样，我们前面说要把&lt; link &gt;放顶部的。</p>
+<p>​</p>
+</li>
+<li><h5 id="Avoid-Filters-避免过滤器的使用"><a href="#Avoid-Filters-避免过滤器的使用" class="headerlink" title="Avoid Filters 避免过滤器的使用"></a>Avoid Filters 避免过滤器的使用</h5><p>如果需要Alpha透明，不要使用AlphaImageLoader，它效率低下而且只对IE6及以下的版本适用，用PNG8图片。如果你非要使用，加上_filter以免影响IE7+用户。</p>
+<p>​</p>
+</li>
+<li><h5 id="Optimize-Images-优化图片"><a href="#Optimize-Images-优化图片" class="headerlink" title="Optimize Images 优化图片"></a>Optimize Images 优化图片</h5><p>将你的GIF转为PNG8会是个减小体积的好办法，另外有很多方法处理你的JPG及PNG图片以达到优化效果。</p>
+<p>​</p>
+</li>
+<li><h5 id="Optimize-CSS-Sprites-优化CSS-Sprites"><a href="#Optimize-CSS-Sprites-优化CSS-Sprites" class="headerlink" title="Optimize CSS Sprites 优化CSS Sprites"></a>Optimize CSS Sprites 优化CSS Sprites</h5><p>在CSS Sprites中竖直并尽量紧凑的排列图片，尽量将颜色相似的图片排在一起，会减小图片本身的大小及提高页面图片显示速度。</p>
+<p>​</p>
+</li>
+<li><h5 id="Don’t-Scale-Images-in-HTML-不要在HTML中缩放图片"><a href="#Don’t-Scale-Images-in-HTML-不要在HTML中缩放图片" class="headerlink" title="Don’t Scale Images in HTML 不要在HTML中缩放图片"></a>Don’t Scale Images in HTML 不要在HTML中缩放图片</h5><p>图片要用多大的就用多大的，1000X1000的图片被width=”100″ height=”100″以后，本身的KB数是不会减少的。</p>
+<p>​</p>
+</li>
+<li><h5 id="Make-favicon-ico-Small-and-Cacheable-缩小favicon-ico的大小并缓存它"><a href="#Make-favicon-ico-Small-and-Cacheable-缩小favicon-ico的大小并缓存它" class="headerlink" title="Make favicon. ico Small and Cacheable 缩小favicon. ico的大小并缓存它"></a>Make favicon. ico Small and Cacheable 缩小favicon. ico的大小并缓存它</h5><p>站点的浏览器ICO应该不是经常换吧，那就长时间的缓存它，并且最好控制在1K以下。</p>
+<p>​</p>
+</li>
+<li><h5 id="Keep-Components-under-25K-保证组件在25K以下"><a href="#Keep-Components-under-25K-保证组件在25K以下" class="headerlink" title="Keep Components under 25K 保证组件在25K以下"></a>Keep Components under 25K 保证组件在25K以下</h5><p>iPhone不能缓存25K以上的组件，并且这还是要在被压缩前。</p>
+<p>​</p>
+</li>
+<li><h5 id="Pack-Components-into-a-Multipart-Document-将组件打包进一个多部分的文档中"><a href="#Pack-Components-into-a-Multipart-Document-将组件打包进一个多部分的文档中" class="headerlink" title="Pack Components into a Multipart Document 将组件打包进一个多部分的文档中"></a>Pack Components into a Multipart Document 将组件打包进一个多部分的文档中</h5><p>就好像在邮件中加入附件一样，一个HTTP请求就够了，但是这一技术需要确保你的代理支持，iPhone就不支持。</p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 面试题 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 面试题 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[jq all]]></title>
+      <url>/2017/02/04/jq-all/</url>
+      <content type="html"><![CDATA[<h5 id="1-jQuery是什么？-了解"><a href="#1-jQuery是什么？-了解" class="headerlink" title="1. jQuery是什么？(了解)"></a>1. jQuery是什么？(了解)</h5><ul>
+<li>www.github.com</li>
+<li>jQuery 其实就是一堆的js函数，是普通的js，只不过应用广泛，形成了行业标准。</li>
+<li>参考书：锋利的jQuery</li>
+<li>学习参考：<a href="http://www.w3school.com.cn/jquery/" target="_blank" rel="external">http://www.w3school.com.cn/jquery/</a></li>
+<li>官网：<a href="http://jquery.com/" target="_blank" rel="external">http://jquery.com/</a></li>
+<li><img src=""></li>
+</ul>
+<p>#####2. jQuery的重点</p>
+<ul>
+<li>2.1 jQuery入口函数(全球都会)</li>
+<li>2.2 jQuery的选择器(其实就是CSS的选择器)</li>
+<li>2.3 jQuery的Dom操作</li>
+<li>2.4 jQuery的样式操作</li>
+<li>2.5 jQuery的动画</li>
+<li>2.6 jQuery的事件处理</li>
+</ul>
+<h5 id="3-jQuery的入口函数"><a href="#3-jQuery的入口函数" class="headerlink" title="3.jQuery的入口函数"></a>3.jQuery的入口函数</h5><ul>
+<li>3.1 语法<ul>
+<li>jQuery(document).read(function(){  });</li>
+<li>$(function(){ });// **</li>
+<li>window.onlaod = function(){}</li>
+<li>$ === jQuery // $是jQuery全局函数的别名。</li>
+</ul>
+</li>
+<li><p>3.2注意事项： <strong>（重点）</strong></p>
+<ul>
+<li><p>document ready:  是html文档准备就绪，也就是dom树创建完成了。可以进行dom操作了。<br> <em>重要的是：html页面下载完成，并准备就绪</em></p>
+</li>
+<li><p>window.onload: 是整个页面所有的资源都加载完成，图片、js、css等…</p>
+</li>
+</ul>
+</li>
+<li><p>3.3 文档加载顺序： <strong>（重点）</strong>         </p>
+<ul>
+<li>下载html页面，解析html标签，遇到link标签加载css，遇到script加载js..</li>
+</ul>
+</li>
+</ul>
+<h5 id="4-jQuery-选择选取元素"><a href="#4-jQuery-选择选取元素" class="headerlink" title="4. jQuery 选择选取元素"></a>4. jQuery 选择选取元素</h5><h6 id="4-1-jQuery选择器"><a href="#4-1-jQuery选择器" class="headerlink" title="4.1 jQuery选择器"></a>4.1 jQuery选择器</h6><ul>
+<li>4.1.1 ID选择器（js一般尽量用ID选择器，效率最高） <strong>（重点）</strong><ul>
+<li>$(“#id”).html();</li>
+</ul>
+</li>
+<li>4.1.2 类选择器 <strong>（重点）</strong><ul>
+<li>$(“.className”).text();</li>
+</ul>
+</li>
+<li>4.1.3 标签选择器 <strong>（重点）</strong><ul>
+<li>$(‘p’).click();</li>
+</ul>
+</li>
+<li>4.1.4 属性选择器<ul>
+<li>$(“li[id]”)、 $(“li[id=’link’]”).fadeIn();</li>
+</ul>
+</li>
+<li>4.1.5 层级选择器 <strong>（重点）</strong><ul>
+<li>$(“li .link”).show();</li>
+</ul>
+</li>
+<li>4.1.6 父子选择器<ul>
+<li>$(“ul &gt; li”)</li>
+</ul>
+</li>
+<li>4.1.7 伪类选择器<ul>
+<li>$(“p:first”) </li>
+<li>$(“ul li:eq(3)”)</li>
+</ul>
+</li>
+<li>4.1.8 表单选择器<ul>
+<li>$(“:text”) </li>
+<li>$(“:checkbox”)</li>
+<li>$(“:checked”)</li>
+</ul>
+</li>
+</ul>
+<h6 id="4-2-选择器汇总"><a href="#4-2-选择器汇总" class="headerlink" title="4.2 选择器汇总"></a>4.2 选择器汇总</h6><pre><code>*               $(&quot;*&quot;)              所有元素
+#id             $(&quot;#lastname&quot;)      id=&quot;lastname&quot; 的元素
+.class          $(&quot;.intro&quot;)         所有 class=&quot;intro&quot; 的元素
+element         $(&quot;p&quot;)              所有 &lt;p&gt; 元素
+.class.class    $(&quot;.intro.demo&quot;)    所有 class=&quot;intro&quot; 且 class=&quot;demo&quot; 的元素
+</code></pre><pre><code>:first  $(&quot;p:first&quot;)    第一个 &lt;p&gt; 元素
+:last   $(&quot;p:last&quot;)     最后一个 &lt;p&gt; 元素
+:even   $(&quot;tr:even&quot;)    所有偶数 &lt;tr&gt; 元素
+:odd    $(&quot;tr:odd&quot;)     所有奇数 &lt;tr&gt; 元素
+</code></pre><pre><code>:eq(index)      $(&quot;ul li:eq(3)&quot;)    列表中的第四个元素（index 从 0 开始）
+:gt(no)         $(&quot;ul li:gt(3)&quot;)    列出 index 大于 3 的元素 greater than
+:lt(no)         $(&quot;ul li:lt(3)&quot;)    列出 index 小于 3 的元素 less than
+:not(selector)  $(&quot;input:not(:empty)&quot;)  所有不为空的 input 元素
+
+:header         $(&quot;:header&quot;)        所有标题元素 &lt;h1&gt; - &lt;h6&gt;
+:animated       所有动画元素
+</code></pre><pre><code>:contains(text)     $(&quot;:contains(&#39;W3School&#39;)&quot;)  包含指定字符串的所有元素
+:empty              $(&quot;:empty&quot;)                 无子（元素）节点的所有元素
+:hidden             $(&quot;p:hidden&quot;)               所有隐藏的 &lt;p&gt; 元素
+:visible            $(&quot;table:visible&quot;)          所有可见的表格
+
+s1,s2,s3            $(&quot;th,td,.intro&quot;)            所有带有匹配选择的元素
+</code></pre><pre><code>[attribute]         $(&quot;[href]&quot;)         所有带有 href 属性的元素
+[attribute=value]   $(&quot;[href=&#39;#&#39;]&quot;)     所有 href 属性的值等于 &quot;#&quot; 的元素
+[attribute!=value]  $(&quot;[href!=&#39;#&#39;]&quot;)    所有 href 属性的值不等于 &quot;#&quot; 的元素
+[attribute$=value]  $(&quot;[href$=&#39;.jpg&#39;]&quot;) 所有 href 属性的值包含以 &quot;.jpg&quot; 结尾的元素
+</code></pre><pre><code>:input      $(&quot;:input&quot;)         所有 &lt;input&gt; 元素
+:text       $(&quot;:text&quot;)          所有 type=&quot;text&quot; 的 &lt;input&gt; 元素
+:password   $(&quot;:password&quot;)      所有 type=&quot;password&quot; 的 &lt;input&gt; 元素
+:radio      $(&quot;:radio&quot;)         所有 type=&quot;radio&quot; 的 &lt;input&gt; 元素
+:checkbox   $(&quot;:checkbox&quot;)      所有 type=&quot;checkbox&quot; 的 &lt;input&gt; 元素
+:submit     $(&quot;:submit&quot;)        所有 type=&quot;submit&quot; 的 &lt;input&gt; 元素
+:reset      $(&quot;:reset&quot;)         所有 type=&quot;reset&quot; 的 &lt;input&gt; 元素
+:button     $(&quot;:button&quot;)        所有 type=&quot;button&quot; 的 &lt;input&gt; 元素
+:image      $(&quot;:image&quot;)         所有 type=&quot;image&quot; 的 &lt;input&gt; 元素
+:file       $(&quot;:file&quot;)          所有 type=&quot;file&quot; 的 &lt;input&gt; 元素
+</code></pre><pre><code>:enabled    $(&quot;:enabled&quot;)   所有激活的 input 元素
+:disabled   $(&quot;:disabled&quot;)  所有禁用的 input 元素
+:selected   $(&quot;:selected&quot;)  所有被选取的 input 元素
+:checked    $(&quot;:checked&quot;)   所有被选中的 input 元素
+</code></pre><h6 id="4-3-jQuery选择方法"><a href="#4-3-jQuery选择方法" class="headerlink" title="4.3 jQuery选择方法"></a>4.3 jQuery选择方法</h6><ul>
+<li><p>4.3.1 获取父级元素</p>
+<pre><code>  * $(selector).parent();     //获取直接父级
+  * $(selector).parents(&#39;p&#39;); //获取所有父级元素直到html
+</code></pre></li>
+<li><p>4.3.2 获取子代和后代的元素</p>
+<pre><code>  * $(selector).children();   //获取直接子元素
+  * $(selector).find(&quot;span&quot;); //获取所有的后代元素
+  * find方法 可能用的多。
+</code></pre></li>
+<li><p>4.3.3 获取同级的元素</p>
+<pre><code>  * $(selector).siblings()    //所有的兄弟节点
+  * $(selector).next()        //下一个节点
+  * $(selector).nextAll()     //后面的所有节点
+  * $(selector).prev()        //前面一个的兄弟节点
+  * $(selector).prevAll()     //前面的所有的兄弟节点
+</code></pre></li>
+<li><p>4.3.4 过滤方法</p>
+<pre><code>  * $(&quot;div p&quot;).last();        //取最后一个元素
+  * $(&quot;div p&quot;).first();       //取第一个元素
+  * $(&quot;p&quot;).eq(1);             //去第n个元素
+  * $(&quot;p&quot;).filter(&quot;.intro&quot;);  //过滤，选择所有p标签带有 .intro类
+  $(&#39;p.intro&#39;)
+  * $(&quot;p&quot;).not(&quot;.intro&quot;);     //去除，跟上面的filetr正好相反
+</code></pre></li>
+</ul>
+<h5 id="5-jQuery的Dom操作"><a href="#5-jQuery的Dom操作" class="headerlink" title="5.jQuery的Dom操作"></a>5.jQuery的Dom操作</h5><h6 id="5-1-获取html的内容"><a href="#5-1-获取html的内容" class="headerlink" title="5.1 获取html的内容"></a>5.1 获取html的内容</h6><pre><code>$(selector).text() - 设置或返回所选元素的文本内容
+$(selector).html() - 设置或返回所选元素的内容（包括 HTML 标记）
+$(selector).val()  - 设置或返回表单字段的值
+</code></pre><ul>
+<li><p>获取和设置相同方法名,通过不同参数来确定是获取还是设置值</p>
+<pre><code>  $(&quot;#blin&quot;).text(&quot;传智播客&quot;);
+  var txt = $(&quot;#blin&quot;).text();
+</code></pre></li>
+<li><p>使用html来创建dom的方式效率比较高。  远大于： document.createElement();</p>
+</li>
+<li><p>案例：02动态创建表格.html</p>
+</li>
+</ul>
+<h6 id="5-2-样式操作"><a href="#5-2-样式操作" class="headerlink" title="5.2 样式操作"></a>5.2 样式操作</h6><ul>
+<li>5.2.1 基本样式操作<pre><code>  $(selector).css(&quot;color&quot;,&quot;red&quot;) |css({})      设置或返回匹配元素的样式属性。
+  $(selector).height()                        设置或返回匹配元素的高度。
+  $(selector).width()                         设置或返回匹配元素的宽度。
+  $(selector).offset().left   =&gt; { left:99, top: 22}     返回第一个匹配元素相对于文档的位置。left,top
+  $(selector).offsetParent()  返回最近的定位祖先元素。
+  $(selector).position()      返回第一个匹配元素相对于父元素的位置。//父元素无需定位
+  $(window).scrollLeft()    设置或返回匹配元素相对滚动条左侧的偏移。
+  $(window).scrollTop(0)     设置或返回匹配元素相对滚动条顶部的偏移。
+  &lt;!-- onscroll --&gt;
+  $(selector).on(&quot;scroll&quot;,function(){});
+</code></pre></li>
+</ul>
+<ul>
+<li>5.2.2 样式类操作<em>尽量操作样式类，少直接操作css属性</em><pre><code>  $(selector).addClass(&#39;class&#39;);     向匹配的元素添加指定的类名。
+  $(selector).removeClass(&#39;class&#39;);  从所有匹配的元素中删除全部或者指定的类。
+  $(selector).toggleClass(&#39;class&#39;)   从匹配的元素中添加或删除一个类。
+  $(selector).hasClass(&#39;class&#39;)      检查匹配的元素是否拥有指定的类。
+</code></pre></li>
+</ul>
+<h6 id="5-3-属性操作"><a href="#5-3-属性操作" class="headerlink" title="5.3 属性操作"></a>5.3 属性操作</h6><pre><code>    $(selector).attr(&quot;id&quot;)      设置或返回匹配元素的属性和值
+    $(selector).attr(&quot;id&quot;,&quot;one&quot;)设置匹配元素的属性值，给元素添加id属性，值为one
+    $(selector).removeAttr()    从所有匹配的元素中移除指定的属性。
+</code></pre><h6 id="5-4-动态创建"><a href="#5-4-动态创建" class="headerlink" title="5.4 动态创建"></a>5.4 动态创建</h6><pre><code>    $(selector).append()    - 在被选元素的结尾插入内容
+    $(selector).append(node) 
+    $(selector).append(&#39;&lt;div&gt;&lt;/div&gt;&#39;)    
+    $(selector).appendTo(); - 追加到..
+    $(selector).prepend()   - 在被选元素的开头插入内容
+    $(selector).after()     - 在被选元素之后插入内容
+    $(selector).before()    - 在被选元素之前插入内容
+</code></pre><p>案例04城市选择案例.html</p>
+<h5 id="6-事件处理"><a href="#6-事件处理" class="headerlink" title="6. 事件处理"></a>6. 事件处理</h5><h6 id="6-1-简单事件绑定方法"><a href="#6-1-简单事件绑定方法" class="headerlink" title="6.1 简单事件绑定方法"></a>6.1 简单事件绑定方法</h6><ul>
+<li>.click(hander)  .click() //绑定事件 或者触发 click事件</li>
+<li>.blur()  //失去焦点事件，同上</li>
+<li><p>.hover(mousein, mouseleave) //鼠标移入，移出</p>
+</li>
+<li><p>mouseout： 当鼠标离开元素及它的子元素的时都会触发。</p>
+</li>
+<li>​</li>
+<li><p>mouseleave: 当鼠标离开自己时才会触发，子元素不触发。</p>
+</li>
+<li><p>.dbclick() 双击</p>
+</li>
+<li>change 改变,比如：文本框发送改变，下来列表发生改变等…</li>
+<li>focus 获得焦点</li>
+<li>keyup, keydown, keypress :  键盘 键被按下。</li>
+<li>mousedown, mouseover         </li>
+</ul>
+<h6 id="6-2-绑定事件的方式-bind方式（不推荐，1-7以后的jQuery版本被on取代）"><a href="#6-2-绑定事件的方式-bind方式（不推荐，1-7以后的jQuery版本被on取代）" class="headerlink" title="6.2 绑定事件的方式 bind方式（不推荐，1.7以后的jQuery版本被on取代）"></a>6.2 绑定事件的方式 bind方式（不推荐，1.7以后的jQuery版本被on取代）</h6><ul>
+<li>语法格式：.bind( eventType [, eventData ], handler )   </li>
+<li>参数说明<ul>
+<li>第一个参数：事件类型</li>
+<li>第二个参数：传递给事件响应方法的数据对象，可以省略。</li>
+<li>事件响应方法中获取数据方式： e.data</li>
+<li>第三个参数：事件响应方法<br><strong>第二个参数可以省略。</strong></li>
+</ul>
+</li>
+</ul>
+<pre><code>    例如：    
+    $(&quot;p&quot;).bind(&quot;click&quot;, function(e){
+        //事件响应方法
+    });
+
+    $(&quot;p&quot;).on(&#39;click&#39;,function(e){
+        //事件响应方法
+    })
+</code></pre><h6 id="6-3-delegate方式（推荐，性能高，支持动态创建的元素）"><a href="#6-3-delegate方式（推荐，性能高，支持动态创建的元素）" class="headerlink" title="6.3 delegate方式（推荐，性能高，支持动态创建的元素）"></a>6.3 delegate方式（推荐，性能高，支持动态创建的元素）</h6><pre><code>* 语法格式：$(selector).delegate( selector, eventType, handler )
+* 语法说明：
+    - 第一个参数:selector， 子选择器
+    - 第二个参数：事件类型
+    - 第三个参数：事件响应方法
+
+​```
+    例如：   
+    $(&quot;.parentBox&quot;).delegate(&quot;p&quot;, &quot;click&quot;, function(){
+        //为 .parentBox下面的所有的p标签绑定事件
+    });
+
+    $(&quot;.parentBox&quot;).on(&quot;click&quot;,&quot;p&quot;, function(){
+        //为 .parentBox下面的所有的p标签绑定事件
+    });
+​```
+*优势：效率较高*
+</code></pre><h6 id="6-4-one绑定一次事件的方式"><a href="#6-4-one绑定一次事件的方式" class="headerlink" title="6.4  one绑定一次事件的方式"></a>6.4  one绑定一次事件的方式</h6><pre><code>* .one( events [, data ], handler )
+</code></pre><pre><code>    例如：
+    $( &quot;p&quot; ).one( &quot;click&quot;, function() {
+      alert( $( this ).text() );
+    });
+
+    $(&quot;p&quot;).on(&quot;click&quot;,function(){
+        $(this).off(&#39;click&#39;);//事件方法执行了一次后，就立即解绑事件
+    })
+</code></pre><h6 id="6-5-on绑定的方式（整合了bind、delegate-烈建议使用的方式））"><a href="#6-5-on绑定的方式（整合了bind、delegate-烈建议使用的方式））" class="headerlink" title="6.5 on绑定的方式（整合了bind、delegate  烈建议使用的方式））"></a>6.5 on绑定的方式（整合了bind、delegate  烈建议使用的方式））</h6><ul>
+<li>jQuery1.7版本后，jQuery用on统一了所有的事件处理的方法</li>
+<li>语法格式：$(selector).on( events [, selector ] [, data ], handler )</li>
+<li><p>参数介绍：</p>
+<ul>
+<li>第一个参数：events，事件名</li>
+<li>第二个参数：selector,类似delegate</li>
+<li>第三个参数: 传递给事件响应方法的参数</li>
+<li><p>第四个参数：handler，事件处理方法</p>
+<pre><code>例如：
+//绑定一个方法
+$( &quot;#dataTable tbody tr&quot; ).on( &quot;click&quot;, function() {
+console.log( $( this ).text() );
+});
+
+//给子元素绑定事件
+$( &quot;#dataTable tbody&quot; ).on( &quot;click&quot;, &quot;tr&quot;, function() {
+console.log( $( this ).text() );
+});
+
+//绑定多个事件的方式
+$( &quot;div.test&quot; ).on({
+click: function() {
+  $( this ).toggleClass( &quot;active&quot; );
+}, mouseenter: function() {
+  $( this ).addClass( &quot;inside&quot; );
+}, mouseleave: function() {
+  $( this ).removeClass( &quot;inside&quot; );
+}
+});
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h6 id="6-6-解绑"><a href="#6-6-解绑" class="headerlink" title="6.6 解绑"></a>6.6 解绑</h6><ul>
+<li><p>unbind解绑 bind方式绑定的事件( 在jQuery1.7以上被 on和off代替)</p>
+<ul>
+<li>$(selector).unbind();         //解绑所有的事件</li>
+<li>$(selector).unbind(“click”);  //解绑指定的事件</li>
+</ul>
+</li>
+<li><p>undelegate解绑delegate事件</p>
+<ul>
+<li>$( “p” ).undelegate();            //解绑所有的delegate事件</li>
+<li>$( “p” ).undelegate( “click” );   //解绑所有的click事件</li>
+</ul>
+</li>
+<li><p>off解绑on方式绑定的事件</p>
+<ul>
+<li>$( “p” ).off();</li>
+<li>$(“P”).off(‘click’);</li>
+<li>$( “p” ).off( “click”, “<em>*” );    // 解绑所有的click事件，两个\</em>表示所有</li>
+<li>$( “body” ).off( “click”, “p”, foo );  </li>
+</ul>
+</li>
+</ul>
+<h6 id="6-7-触发事件"><a href="#6-7-触发事件" class="headerlink" title="6.7 触发事件"></a>6.7 触发事件</h6><ul>
+<li>6.7.1 简单事件触发<ul>
+<li>$(selector).click(); //触发 click事件</li>
+</ul>
+</li>
+<li>6.7.2 trigger方法触发事件<ul>
+<li>$( “#foo” ).trigger( “click” );</li>
+</ul>
+</li>
+<li>6.7.3 triggerHandler触发 事件响应方法，不触发浏览器行为<ul>
+<li>$( “input” ).triggerHandler( “focus” );</li>
+</ul>
+</li>
+</ul>
+<h6 id="6-8-event对象的简介"><a href="#6-8-event对象的简介" class="headerlink" title="6.8 event对象的简介"></a>6.8 event对象的简介</h6><ul>
+<li><p>event.data            //传递的额外事件响应方法的额外参数</p>
+</li>
+<li><p>event.currentTarget === this   //在事件响应方法中等同于this，当前Dom对象</p>
+</li>
+<li><p><strong>event.target </strong>         //事件触发源，不一定===this</p>
+</li>
+<li><p><strong>event.pageX</strong>           //The mouse position relative to the left edge of the document</p>
+</li>
+<li><p><strong>event.pageY</strong></p>
+</li>
+<li><p><strong>event.stopPropagation()</strong>//阻止事件冒泡</p>
+</li>
+<li><p><strong>e.preventDefault();</strong>    //阻止默认行为</p>
+</li>
+<li><p>event.type                 //事件类型：click，dbclick…</p>
+</li>
+<li>event.which                //鼠标的按键类型：左1 中2 右3</li>
+<li>keydown : a,b,c</li>
+<li>event.keyCode// code的c是大写</li>
+</ul>
+<h5 id="7-jQuery动画系统"><a href="#7-jQuery动画系统" class="headerlink" title="7. jQuery动画系统"></a>7. jQuery动画系统</h5><h6 id="7-1隐藏显示"><a href="#7-1隐藏显示" class="headerlink" title="7.1隐藏显示"></a>7.1隐藏显示</h6><pre><code>* $(selector).show(speed,callback);
+* $(selector).hide(1000);
+* $(selector).toggle(&quot;slow&quot;);
+
+* 三个方法的语法都一致，参数可以有两个，第一个是动画的速度，第二个是动画执行完成后的回调函数。
+* 第一个参数是：可以是单词或者毫秒数
+</code></pre><h6 id="7-2淡入淡出"><a href="#7-2淡入淡出" class="headerlink" title="7.2淡入淡出"></a>7.2淡入淡出</h6><pre><code>$(selector).fadeIn(speed, callback)
+$(selector).fadeOut(1000)
+$(selector).fadeToggle(&#39;fast&#39;,function(){})
+参数等同于 7.1
+
+* $(selector).fadeTo(.5); //淡入到  0透明，1不透明
+</code></pre><h6 id="7-3滑动"><a href="#7-3滑动" class="headerlink" title="7.3滑动"></a>7.3滑动</h6><pre><code>* $(selector).slideDown(speed,callback);
+* $(selector).slideUp(speed,callback);
+* $(selector).slideToggle(speed,callback);
+</code></pre><h6 id="7-4动画"><a href="#7-4动画" class="headerlink" title="7.4动画"></a>7.4动画</h6><pre><code>* $(selector).animate({params},speed,callback);
+</code></pre><pre class="line-numbers language-javascript"><code class="language-javascript">    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"button"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        left<span class="token punctuation">:</span><span class="token string">'250px'</span><span class="token punctuation">,</span>
+        opacity<span class="token punctuation">:</span><span class="token string">'0.5'</span><span class="token punctuation">,</span>
+        height<span class="token punctuation">:</span><span class="token string">'150px'</span><span class="token punctuation">,</span>
+        width<span class="token punctuation">:</span><span class="token string">'150px'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">animate</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="7-5结束动画"><a href="#7-5结束动画" class="headerlink" title="7.5结束动画"></a>7.5结束动画</h6><pre><code>* $(selector).stop()
+* $(selector).stop(stopAll,goToEnd);
+</code></pre><ul>
+<li>案例：</li>
+</ul>
+<h5 id="8-jQuery补充"><a href="#8-jQuery补充" class="headerlink" title="8. jQuery补充"></a>8. jQuery补充</h5><ul>
+<li>8.1 each函数<ul>
+<li>全局的<ul>
+<li>$.each(array, function(index, object){})</li>
+</ul>
+</li>
+<li>普通jQuery对象的each方法<ul>
+<li>$(“li”).each(function(index, element){} )</li>
+<li>参数的顺序是一致的。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> jQuery </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> jquery </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[js中创建对象的方式]]></title>
       <url>/2017/01/04/js-create-object/</url>
       <content type="html"><![CDATA[<h5 id="js中创建对象的方式"><a href="#js中创建对象的方式" class="headerlink" title="js中创建对象的方式"></a>js中创建对象的方式</h5><blockquote>
