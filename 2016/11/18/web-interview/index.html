@@ -144,7 +144,7 @@
     
 <article id="post">
   <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-11.png)" >
-  <h2>js基础面试题</h2>
+  <h2>js基础(web-interview)</h2>
     
   <p>作者:李华炎 &nbsp&nbsp 发布于:<time datetime="2016-11-18T01:55:58.000Z">
           2016-11-18
@@ -178,7 +178,7 @@
 8、Number            //数组对象
 9、Object            //基础对象
 10、RegExp            //正则表达式对象
-11、Global            // 全局对象        //windou对象已经把global对象的方法实现了
+11、String            //字符串对象
 </code></pre><p><br></p>
 <h5 id="3-等于和全等于的区别"><a href="#3-等于和全等于的区别" class="headerlink" title="3-等于和全等于的区别"></a>3-等于和全等于的区别</h5><blockquote>
 <p>== 只判断值是否相等。如：console.log(null == undefined); //true</p>
@@ -222,6 +222,13 @@
 <p>2.在函数内可写可不写，看情况</p>
 <p>3.结束函数并返回运行结果</p>
 </blockquote>
+<p><br></p>
+<h5 id="8-instanceof运算符"><a href="#8-instanceof运算符" class="headerlink" title="8-instanceof运算符"></a>8-instanceof运算符</h5><blockquote>
+<p>有时候我们需要了解某个对象是否继承自某个指定的构造函数时可以使用instanceof来判断，instanceof是一个二元运算符。</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token keyword">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// false</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
   </div>
   <!--评论块-->
@@ -272,7 +279,7 @@
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-js中的数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">1-js中的数据类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-js的内置对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">2-js的内置对象</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-等于和全等于的区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">3-等于和全等于的区别</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-for-in-循环"><span class="post-toc-number">4.</span> <span class="post-toc-text">4-for in 循环</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-delete关键字"><span class="post-toc-number">5.</span> <span class="post-toc-text">5-delete关键字</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-break和continue及return的区别"><span class="post-toc-number">6.</span> <span class="post-toc-text">6-break和continue及return的区别</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-return的作用"><span class="post-toc-number">7.</span> <span class="post-toc-text">7-return的作用</span></a></li></ol>
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-js中的数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">1-js中的数据类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-js的内置对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">2-js的内置对象</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-等于和全等于的区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">3-等于和全等于的区别</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-for-in-循环"><span class="post-toc-number">4.</span> <span class="post-toc-text">4-for in 循环</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-delete关键字"><span class="post-toc-number">5.</span> <span class="post-toc-text">5-delete关键字</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-break和continue及return的区别"><span class="post-toc-number">6.</span> <span class="post-toc-text">6-break和continue及return的区别</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-return的作用"><span class="post-toc-number">7.</span> <span class="post-toc-text">7-return的作用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#8-instanceof运算符"><span class="post-toc-number">8.</span> <span class="post-toc-text">8-instanceof运算符</span></a></li></ol>
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">

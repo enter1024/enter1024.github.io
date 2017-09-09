@@ -1870,7 +1870,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     </entry>
     
     <entry>
-      <title><![CDATA[js基础面试题]]></title>
+      <title><![CDATA[js基础(web-interview)]]></title>
       <url>/2016/11/18/web-interview/</url>
       <content type="html"><![CDATA[<h5 id="1-js中的数据类型"><a href="#1-js中的数据类型" class="headerlink" title="1-js中的数据类型"></a>1-js中的数据类型</h5><blockquote>
 <p>1.string</p>
@@ -1897,7 +1897,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 8、Number            //数组对象
 9、Object            //基础对象
 10、RegExp            //正则表达式对象
-11、Global            // 全局对象        //windou对象已经把global对象的方法实现了
+11、String            //字符串对象
 </code></pre><p><br></p>
 <h5 id="3-等于和全等于的区别"><a href="#3-等于和全等于的区别" class="headerlink" title="3-等于和全等于的区别"></a>3-等于和全等于的区别</h5><blockquote>
 <p>== 只判断值是否相等。如：console.log(null == undefined); //true</p>
@@ -1941,6 +1941,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>2.在函数内可写可不写，看情况</p>
 <p>3.结束函数并返回运行结果</p>
 </blockquote>
+<p><br></p>
+<h5 id="8-instanceof运算符"><a href="#8-instanceof运算符" class="headerlink" title="8-instanceof运算符"></a>8-instanceof运算符</h5><blockquote>
+<p>有时候我们需要了解某个对象是否继承自某个指定的构造函数时可以使用instanceof来判断，instanceof是一个二元运算符。</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token keyword">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// false</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// true</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 ]]></content>
       
         <categories>
@@ -2503,7 +2510,7 @@ ul<span class="token punctuation">.</span><span class="token function">addEventL
     </entry>
     
     <entry>
-      <title><![CDATA[基础类型/内置对象]]></title>
+      <title><![CDATA[基础类型/内置对象/转换(js-operators)]]></title>
       <url>/2016/07/16/js-operators/</url>
       <content type="html"><![CDATA[<h5 id="js的内置对象"><a href="#js的内置对象" class="headerlink" title="js的内置对象"></a>js的内置对象</h5><pre><code>1、Arguments            //函数参数集合        //arguments[&#39;ɑːgjʊm(ə)nts]参数/
 2、Array                //数组
@@ -2515,7 +2522,7 @@ ul<span class="token punctuation">.</span><span class="token function">addEventL
 8、Number            //数组对象
 9、Object            //基础对象
 10、RegExp            //正则表达式对象
-11、Global            // 全局对象        //windou对象已经把global对象的方法实现了
+11、String            //字符串对象
 </code></pre><p><br></p>
 <h5 id="js的数据类型"><a href="#js的数据类型" class="headerlink" title="js的数据类型"></a>js的数据类型</h5><blockquote>
 <p>问：js中数据类型有哪些?</p>
@@ -2554,7 +2561,7 @@ false:    1.空字符串
         5.undefined
 </code></pre><p>6.object</p>
 <p><br></p>
-<h5 id="强制转换和隐式转换的结果有所不同"><a href="#强制转换和隐式转换的结果有所不同" class="headerlink" title="强制转换和隐式转换的结果有所不同"></a>强制转换和隐式转换的结果有所不同</h5><p>强制转换为boolean类型时，只有非空字符串、非零数值、非空对象、</p>
+<h5 id="强制转换和隐式转换的结果有所不同"><a href="#强制转换和隐式转换的结果有所不同" class="headerlink" title="强制转换和隐式转换的结果有所不同"></a>强制转换和隐式转换的结果有所不同</h5><p>强制转换为boolean类型时，只有非空字符串、非零数值、非空对象都是true（[]也是true）<br>强制转换为boolean类型时，空字符串、0 、NaN 、null 、undefined都是false</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//true        //强制转换为true</span>
 <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//false        //隐式转换为false</span>
 <span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//false        //强制转换为true，!true=false, false==true ->false</span>
