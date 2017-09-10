@@ -141,57 +141,70 @@
 
 <div id="content-outer">
   <div id="content-inner">
-    <div id="recent-posts">
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#26A69A;background-image:url(/images/random/vateral-10.png)" >
+  <h2>js基础</h2>
+    
+  <p>作者:李华炎 &nbsp&nbsp 发布于:<time datetime="2016-02-04T06:49:47.000Z">
+          2016-02-04
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
   
-      <div class="recent-post-item lazy" style="background-color:#26A69A"   data-original="/images/random/vateral-13.png"  >
-        <a class="recent-post-link" href="/2017/03/09/js-ajax/">
-        <div class="post-hover">
-          <!--title-->
-          <p class="post-title"><a href="/2017/03/09/js-ajax/" >Ajax异步请求(http请求)</a></p>
+  </div>
+  <!--评论块-->
+    
+  <div id="disqus_thread" style="padding:30px;text-align: center;border-top:1px solid silver " data-diaque="enterlhy-disqus-com.disqus.com"><button style="margin: 0 auto;background-color:#26A69A " class="btn" onclick="disqus()">加载评论(被墙则无法加载)</button></div>
 
-          <!--date-->
-          
-            <p class="post-time">李华炎 &nbsp &nbsp 发布于:<time datetime="2017-03-09T01:23:15.000Z">
-              2017-03-09
-            </time>
-            </p>
-          
+  <script>
 
-          <!--tags-->
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */
+      function disqus() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script'),v = d.createElement('script'),disquUrl=document.getElementById("disqus_thread").dataset.diaque;
+          v.id = 'dsq-count-scr'
+          v.src= '//'+disquUrl+'/count.js';
+          s.src = 'https://'+disquUrl+'/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(v);
+          (d.head || d.body).appendChild(s);
+      }
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
 
-          标签:
-            
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li></ul>
-            
-          <!--分类-->
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+  <a href="/2016/05/05/hello-world/" id="post_nav-newer" class="post-nav-content prev-content">
+      新篇
+  </a>
+    
 
-          分类:
-            
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li></ul>
-            
 
-          <!--excerpt-->
-          <div class="post-excerpt">
-            <p>
-              摘要：
-              
-                一次完整的http请求当我们在浏览器的地址栏中输入一个url地址时（如：www.baidu.com）都经历了那些步骤？
-
-1....
-              
-            </p>
-          </div>
-          <div class="post-more"><a href="/2017/03/09/js-ajax/" >全文阅读</a></div>
-        </div>
-        </a>
-      </div>
-  
-  <nav class="paging">
-    <span class="page-number current">1</span>
+  <!-- Next Nav -->
+    
 </nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    
 </div>
-
-
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
   </div>
 </div>
 <div id="bottom-outer">

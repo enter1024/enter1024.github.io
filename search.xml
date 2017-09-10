@@ -1841,9 +1841,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
         
         <tags>
             
-            <tag> js </tag>
-            
             <tag> 对象 </tag>
+            
+            <tag> js </tag>
             
         </tags>
         
@@ -2852,6 +2852,28 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <tag> js </tag>
             
             <tag> 异步 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[js基础]]></title>
+      <url>/2016/02/04/web-base/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> javascript </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> 代码块 </tag>
             
         </tags>
         
