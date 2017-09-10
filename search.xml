@@ -491,26 +491,6 @@ obj <span class="token operator">=</span> <span class="token punctuation">{</spa
     </entry>
     
     <entry>
-      <title><![CDATA[web App]]></title>
-      <url>/2017/08/04/web-app/</url>
-      <content type="html"></content>
-      
-        <categories>
-            
-            <category> javascript </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> webApp </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[window]]></title>
       <url>/2017/08/04/js-window/</url>
       <content type="html"><![CDATA[<h5 id="浏览器窗口"><a href="#浏览器窗口" class="headerlink" title="浏览器窗口"></a>浏览器窗口</h5><p>有三种方法能够确定浏览器窗口的尺寸（浏览器的视口，不包括工具栏和滚动条）。</p>
